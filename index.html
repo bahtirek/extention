@@ -10,26 +10,26 @@
 </head>
 
 <body>
-    <div class="extension" id="extension">
-        <div class="menu-container container">
-            <span class="choose" data-title="Select">
+    <div class="extension alwayOn" id="extension">
+        <div class="menu-container container alwayOn">
+            <span class="operator alwayOn" data-title="Select" onclick="activateOperator(id);" id="select-button">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                     stroke-linecap="round" stroke-linejoin="round" class="feather feather-mouse-pointer">
                     <path d="M3 3l7.07 16.97 2.51-7.39 7.39-2.51L3 3z" />
                     <path d="M13 13l6 6" /></svg>
             </span>
-            <span class="edit" data-title="Note">
+            <span class="operator alwayOn" data-title="Note">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                     stroke-linecap="round" stroke-linejoin="round" class="feather feather-message-square">
                     <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" /></svg>
             </span>
-            <span class="edit" data-title="Edit">
+            <span class="operator alwayOn" data-title="Edit">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                     stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit">
                     <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />
                     <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" /></svg>
             </span>
-            <span class="report" data-title="Report">
+            <span class="operator alwayOn" data-title="Report">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                     stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-plus">
                     <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
@@ -37,7 +37,7 @@
                     <line x1="12" y1="18" x2="12" y2="12" />
                     <line x1="9" y1="15" x2="15" y2="15" /></svg>
             </span>
-            <span class="delete" data-title="Delete">
+            <span class="operator alwayOn" data-title="Delete">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                     stroke-linecap="round" stroke-linejoin="round" class="feather feather-trash-2">
                     <polyline points="3 6 5 6 21 6" />
@@ -45,7 +45,7 @@
                     <line x1="10" y1="11" x2="10" y2="17" />
                     <line x1="14" y1="11" x2="14" y2="17" /></svg>
             </span>
-            <span class="settings" data-title="Settings">
+            <span class="operator alwayOn" data-title="Settings">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                     stroke-linecap="round" stroke-linejoin="round" class="feather feather-settings">
                     <circle cx="12" cy="12" r="3" />
@@ -53,7 +53,7 @@
                         d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" />
                     </svg>
             </span>
-            <span class="close" data-title="Close">
+            <span class="operator alwayOn" data-title="Close">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f04242" stroke-width="2"
                     stroke-linecap="round" stroke-linejoin="round" class="feather feather-x">
                     <line x1="18" y1="6" x2="6" y2="18" />
@@ -62,7 +62,13 @@
         </div>
     </div>
 
+    <button>
+        TEST
+    </button>
+
     <script src="extension-move.js"></script>
+    <script src="select.js"></script>
+    <script src="helper-utils.js"></script>
 </body>
 
 </html>
