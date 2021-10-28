@@ -60,6 +60,68 @@
                     <line x1="6" y1="6" x2="18" y2="18" /></svg>
             </span>
         </div>
+        <div class="container dropdown">
+            <div class="edit">
+                <h4 class="drop-title">Edit</h4>
+                <div class="drop-body">
+                    <div class="form-container text">
+                        <label for="title">Title</label>
+                        <input type="text" name="title" id="title" onclick="select()">
+                    </div>
+                    <div class="form-container textarea">
+                        <label for="notes">Result</label>
+                        <textarea name="notes" id="notes" rows="3" onclick="select()"></textarea>
+                    </div>
+                    <div class="form-container textarea">
+                        <label for="notes">Expected</label>
+                        <textarea name="notes" id="notes" rows="3" onclick="select()"></textarea>
+                    </div>
+                    <div class="form-container textarea">
+                        <label for="notes">Additional Notes</label>
+                        <textarea name="notes" id="notes" rows="2" onclick="select()"></textarea>
+                    </div>
+                </div>
+                <button>Save</button>
+            </div>
+            <div class="review">
+                <h4 class="drop-title">Review</h4>
+
+            </div>
+            <div class="report">
+                <h4 class="drop-title">Report type</h4>
+                <div class="drop-body">
+                    <div class="form-container checkbox">
+                        <input type="checkbox" name="bizniki" id="bizniki" value="bizniki">
+                        <label for="bizniki">Bizniki</label>
+                    </div>
+                    <div class="form-container checkbox">
+                        <input type="checkbox" name="jira" id="jira" value="jira">
+                        <label for="jira">Jira</label>
+                    </div>
+                    <div class="form-container checkbox">
+                        <input type="checkbox" name="monday" id="monday" value="monday">
+                        <label for="monday">Monday</label>
+                    </div>
+                    <div class="form-container checkbox">
+                        <input type="checkbox" name="slack" id="slack" value="slack">
+                        <label for="slack">Slack</label>
+                    </div>
+                    <div class="form-container checkbox">
+                        <input type="checkbox" name="pdf" id="pdf" value="pdf">
+                        <label for="pdf">PDF</label>
+                    </div>
+                    <div class="form-container checkbox">
+                        <input type="checkbox" name="word" id="word" value="word">
+                        <label for="word">MS Word</label>
+                    </div>
+                </div>
+                <button>Report</button>
+            </div>
+            <div class="settings">
+                <h4 class="drop-title">Settings</h4>
+
+            </div>
+        </div>
     </div>
 
     <button>

@@ -9,6 +9,7 @@
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
   display: inline-flex;
   font-family: Arial;
+  flex-direction: column;
 }
 .extension:hover {
   cursor: move;
@@ -47,11 +48,12 @@
   margin-left: 8px;
 }
 .extension .menu-container span.active svg {
-  color: #000000;
+  color: #596fb7;
   transform: scale(1.3);
 }
 .extension .menu-container span.active::before {
   color: transparent;
+  background: none;
 }
 .extension .menu-container span:before {
   content: attr(data-title);
@@ -66,4 +68,78 @@
   transition: 0.1s ease-out;
   background: #ffffff;
   padding: 2px;
+}
+.extension .dropdown {
+  cursor: default;
+}
+.extension .dropdown > div {
+  display: none;
+  max-height: 500px;
+  padding-bottom: 10px;
+  cursor: default;
+}
+.extension .dropdown > div h4 {
+  color: #596fb7;
+  border-bottom: 1px solid #596fb7;
+  padding: 0 3px 3px;
+}
+.extension .dropdown > div.active {
+  display: block;
+}
+.extension .dropdown > div .form-container {
+  display: flex;
+  margin-bottom: 10px;
+  color: #707070;
+  position: relative;
+}
+.extension .dropdown > div .form-container.checkbox {
+  align-items: center;
+}
+.extension .dropdown > div .form-container.checkbox input[type=checkbox] {
+  height: 18px;
+  width: 18px;
+  margin-right: 15px;
+}
+.extension .dropdown > div .form-container.checkbox label {
+  font-size: 15px;
+  font-weight: bold;
+}
+.extension .dropdown > div .form-container.text,
+.extension .dropdown > div .form-container.textarea {
+  margin-bottom: 20px;
+}
+.extension .dropdown > div .form-container.text input[type=text],
+.extension .dropdown > div .form-container.textarea input[type=text],
+.extension .dropdown > div .form-container.text textarea,
+.extension .dropdown > div .form-container.textarea textarea {
+  width: 100%;
+  padding: 6px 14px;
+  border: 1px solid #c4c8c9;
+  border-radius: 4px;
+}
+.extension .dropdown > div .form-container.text label,
+.extension .dropdown > div .form-container.textarea label {
+  position: absolute;
+  top: -8px;
+  left: 5px;
+  padding: 0px 3px;
+  background-color: #ffffff;
+  font-size: 11px;
+}
+.extension .dropdown > div button {
+  padding: 7px 12px;
+  border-radius: 4px;
+  margin: 20px 25px 0 auto;
+  display: block;
+  border: none;
+  color: #596fb7;
+  background-color: #ffffff;
+  font-weight: bold;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+.extension .dropdown > div button:hover {
+  cursor: pointer;
+}
+.extension .dropdown > div button:active {
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
 }
