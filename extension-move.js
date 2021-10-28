@@ -22,7 +22,11 @@ extension.addEventListener('mouseup',function(event){
 },true);
 
 function moveExtension(e){
-    extension.style.top = e.pageY - extensionPosTop + "px";
-    extension.style.left = e.pageX - extensionPosLeft + "px";
+    if (e.pageY > 0 && e.pageY < window.innerHeight){
+        extension.style.top = e.pageY - extensionPosTop + "px";
+    }
+    if (e.pageX > 0 && e.pageX < window.innerWidth){
+        extension.style.left = e.pageX - extensionPosLeft + "px";
+    }
 }
 
