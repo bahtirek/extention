@@ -18,7 +18,7 @@
                     <path d="M3 3l7.07 16.97 2.51-7.39 7.39-2.51L3 3z" />
                     <path d="M13 13l6 6" /></svg>
             </span>
-            <span class="operator alwayOn" data-title="Add note">
+            <span class="operator alwayOn" data-title="Add comments">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                     stroke-linecap="round" stroke-linejoin="round" class="feather feather-message-square">
                     <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
@@ -30,9 +30,9 @@
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                     stroke-linecap="round" stroke-linejoin="round" class="feather feather-message-square">
                     <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                    <polyline stroke="#ffffff" points="8 6 12 10 22 0"/>
                     <polyline points="9 9 12 12 22 2"/>
-                    <polyline stroke="#ffffff" points="9 12 12 15 22 5"/>
-                    <polyline stroke="#ffffff" points="9 7 12 10 22 0"/>
+                    <polyline stroke="#ffffff" points="10 13 12 15 22 4"/>
                 </svg>
                 <!-- <svg class="review" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-eye"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg> -->
             </span>
@@ -66,8 +66,8 @@
             </span>
         </div>
         <div class="container dropdown">
-            <div class="edit">
-                <h4 class="drop-title">Edit</h4>
+            <div class="edit active">
+                <h4 class="drop-title">Add comments</h4>
                 <div class="drop-body">
                     <div class="form-container text">
                         <label for="title">Title</label>
@@ -75,15 +75,15 @@
                     </div>
                     <div class="form-container textarea">
                         <label for="notes">Result</label>
-                        <textarea name="notes" id="notes" rows="3" onclick="select()"></textarea>
+                        <textarea name="notes" id="notes" rows="3" onclick="select()" data-gramm="false"></textarea>
                     </div>
                     <div class="form-container textarea">
                         <label for="notes">Expected</label>
-                        <textarea name="notes" id="notes" rows="3" onclick="select()"></textarea>
+                        <textarea name="notes" id="notes" rows="3" onclick="select()" data-gramm="false"></textarea>
                     </div>
                     <div class="form-container textarea">
                         <label for="notes">Additional Notes</label>
-                        <textarea name="notes" id="notes" rows="2" onclick="select()"></textarea>
+                        <textarea name="notes" id="notes" rows="2" onclick="select()" data-gramm="false"></textarea>
                     </div>
                 </div>
                 <button>Save</button>
