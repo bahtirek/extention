@@ -1,6 +1,6 @@
 function onSelect(){
 
-    let noPointerEvent = '*:not(body){pointer-events: none; }';
+    let noPointerEvent = '*:not(body){pointer-events: none!important; }';
     let noHighlight = `*{
         -webkit-tap-highlight-color: transparent;
         -webkit-touch-callout: none;
@@ -23,9 +23,10 @@ function onSelect(){
         style.appendChild(document.createTextNode(noPointerEvent+noHighlight));
     }
 
-    document.querySelectorAll('.alwayOn').forEach(element => {
+    // css bilan tugirladim
+    /* document.querySelectorAll('.alwayOn').forEach(element => {
         element.style.pointerEvents ='auto';
-    });
+    }); */
 }
 
 function onDeselect(){

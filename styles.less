@@ -1,4 +1,4 @@
-@primary-color: #596fb7;
+@primary-color: #00ad55;
 
 .extension {
     position: fixed;
@@ -12,7 +12,11 @@
     display: inline-flex;
     font-family: Arial;
     flex-direction: column;
-
+    pointer-events: initial !important;
+    
+    * {
+        pointer-events: initial !important;
+    }
     &:hover {
         cursor: move;
     }
@@ -131,6 +135,12 @@
                         padding: 6px 14px;
                         border: 1px solid #c4c8c9;
                         border-radius: 4px;
+                        &:focus-visible {
+                            outline: none;
+                        }
+                        &:focus, &:active {
+                            border-color: @primary-color;
+                        }
                     }
                     
                     label {

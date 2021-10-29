@@ -10,6 +10,10 @@
   display: inline-flex;
   font-family: Arial;
   flex-direction: column;
+  pointer-events: initial !important;
+}
+.extension * {
+  pointer-events: initial !important;
 }
 .extension:hover {
   cursor: move;
@@ -53,7 +57,7 @@
   margin-left: 8px;
 }
 .extension .menu-container span.active svg {
-  color: #596fb7;
+  color: #00ad55;
   transform: scale(1.3);
 }
 .extension .menu-container span.active::before {
@@ -85,8 +89,8 @@
   cursor: default;
 }
 .extension .dropdown > div h4 {
-  color: #596fb7;
-  border-bottom: 1px solid #596fb7;
+  color: #00ad55;
+  border-bottom: 1px solid #00ad55;
   padding: 0 3px 3px;
 }
 .extension .dropdown > div.active {
@@ -123,6 +127,22 @@
   border: 1px solid #c4c8c9;
   border-radius: 4px;
 }
+.extension .dropdown > div .form-container.text input[type=text]:focus-visible,
+.extension .dropdown > div .form-container.textarea input[type=text]:focus-visible,
+.extension .dropdown > div .form-container.text textarea:focus-visible,
+.extension .dropdown > div .form-container.textarea textarea:focus-visible {
+  outline: none;
+}
+.extension .dropdown > div .form-container.text input[type=text]:focus,
+.extension .dropdown > div .form-container.textarea input[type=text]:focus,
+.extension .dropdown > div .form-container.text textarea:focus,
+.extension .dropdown > div .form-container.textarea textarea:focus,
+.extension .dropdown > div .form-container.text input[type=text]:active,
+.extension .dropdown > div .form-container.textarea input[type=text]:active,
+.extension .dropdown > div .form-container.text textarea:active,
+.extension .dropdown > div .form-container.textarea textarea:active {
+  border-color: #00ad55;
+}
 .extension .dropdown > div .form-container.text label,
 .extension .dropdown > div .form-container.textarea label {
   position: absolute;
@@ -138,7 +158,7 @@
   margin: 20px 25px 0 auto;
   display: block;
   border: none;
-  color: #596fb7;
+  color: #00ad55;
   background-color: #ffffff;
   font-weight: bold;
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
