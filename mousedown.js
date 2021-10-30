@@ -20,7 +20,7 @@ var holdActive = false;
 
  
 
-function onMouseDown(){
+function onMouseDown(callback){
 
 
     // Do not take any immediate action - just set the holdStarter
@@ -36,7 +36,7 @@ function onMouseDown(){
         // begin hold-only operation here, if desired
         // read mouse position
         console.log('down');
-        window.addEventListener('mousemove', moveExtension, true);
+        window.addEventListener('mousemove', callback, true);
 
     }, holdDelay);
 
@@ -46,7 +46,7 @@ function onMouseDown(){
 
 // MouseUp
 
-function onMouseUp(){
+function onMouseUp(callback){
 
     // If the mouse is released immediately (i.e., a click), before the
 
@@ -57,7 +57,7 @@ function onMouseUp(){
         clearTimeout(holdStarter);
 
         // run click-only operation here 
-        window.removeEventListener('mousemove', moveExtension, true);
+        window.removeEventListener('mousemove', callback, true);
 
     }
 
@@ -68,7 +68,7 @@ function onMouseUp(){
         holdActive = false;
 
         // end hold-only operation here, if desired
-        window.removeEventListener('mousemove', moveExtension, true);
+        window.removeEventListener('mousemove', callback, true);
 
     }
 
