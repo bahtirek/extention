@@ -2,6 +2,8 @@ function activateOperator(operatorId){
 
     let operator = document.getElementById(operatorId);
 
+    closeDropdown();
+
     if(!operator.classList.contains('active')){
 
         document.querySelectorAll('.operator').forEach(operator => {
@@ -17,6 +19,26 @@ function activateOperator(operatorId){
             case 'select-button':
                 onSelect();
                 break;
+
+            case 'comment-button':
+                onSelect();
+                openDropdown('comment');
+                break;
+
+            case 'review-button':
+                onSelect();
+                openDropdown('review');
+                break;
+
+            case 'report-button':
+                onSelect();
+                openDropdown('report');
+                break;
+
+            case 'settings-button':
+                onSelect();
+                openDropdown('settings');
+                break;
         }
     }else{
 
@@ -31,4 +53,19 @@ function activateOperator(operatorId){
 
     }
 
+}
+
+function openDropdown(dropItemId) {
+
+    document.getElementById(dropItemId).classList.add('active');
+
+}
+
+function closeDropdown() {
+
+    document.querySelectorAll('.extension .dropdown-item').forEach(operator => {
+
+        operator.classList.remove('active');
+
+    });
 }
