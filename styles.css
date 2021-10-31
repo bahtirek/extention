@@ -87,69 +87,77 @@
 .extension .dropdown {
   cursor: default;
 }
-.extension .dropdown > div {
+.extension .dropdown .dropdown-item {
   display: none;
   padding-bottom: 10px;
   padding: 10px 10px;
   cursor: default;
+  overflow: auto;
 }
-.extension .dropdown > div h4 {
+.extension .dropdown .dropdown-item h4 {
   color: #00ad55;
   border-bottom: 1px solid #00ad55;
   padding: 0 3px 3px;
 }
-.extension .dropdown > div.active {
+.extension .dropdown .dropdown-item.active {
   display: block;
 }
-.extension .dropdown > div .form-container {
+.extension .dropdown .dropdown-item .form-container {
   display: flex;
+  flex-wrap: wrap;
   margin-bottom: 10px;
   color: #707070;
   position: relative;
 }
-.extension .dropdown > div .form-container.checkbox {
+.extension .dropdown .dropdown-item .form-container.checkbox {
   align-items: center;
 }
-.extension .dropdown > div .form-container.checkbox input[type=checkbox] {
+.extension .dropdown .dropdown-item .form-container.checkbox input[type=checkbox] {
   height: 18px;
   width: 18px;
-  margin-right: 15px;
+  margin-right: 10px;
 }
-.extension .dropdown > div .form-container.checkbox label {
+.extension .dropdown .dropdown-item .form-container.checkbox label {
   font-size: 15px;
-  font-weight: bold;
 }
-.extension .dropdown > div .form-container.text,
-.extension .dropdown > div .form-container.textarea {
+.extension .dropdown .dropdown-item .form-container.checkbox .disclaimer {
+  font-size: 11px;
+  color: red;
+  margin-left: 31px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.extension .dropdown .dropdown-item .form-container.text,
+.extension .dropdown .dropdown-item .form-container.textarea {
   margin-bottom: 20px;
 }
-.extension .dropdown > div .form-container.text input[type=text],
-.extension .dropdown > div .form-container.textarea input[type=text],
-.extension .dropdown > div .form-container.text textarea,
-.extension .dropdown > div .form-container.textarea textarea {
+.extension .dropdown .dropdown-item .form-container.text input[type=text],
+.extension .dropdown .dropdown-item .form-container.textarea input[type=text],
+.extension .dropdown .dropdown-item .form-container.text textarea,
+.extension .dropdown .dropdown-item .form-container.textarea textarea {
   width: 100%;
   padding: 6px 14px;
   border: 1px solid #c4c8c9;
   border-radius: 4px;
 }
-.extension .dropdown > div .form-container.text input[type=text]:focus-visible,
-.extension .dropdown > div .form-container.textarea input[type=text]:focus-visible,
-.extension .dropdown > div .form-container.text textarea:focus-visible,
-.extension .dropdown > div .form-container.textarea textarea:focus-visible {
+.extension .dropdown .dropdown-item .form-container.text input[type=text]:focus-visible,
+.extension .dropdown .dropdown-item .form-container.textarea input[type=text]:focus-visible,
+.extension .dropdown .dropdown-item .form-container.text textarea:focus-visible,
+.extension .dropdown .dropdown-item .form-container.textarea textarea:focus-visible {
   outline: none;
 }
-.extension .dropdown > div .form-container.text input[type=text]:focus,
-.extension .dropdown > div .form-container.textarea input[type=text]:focus,
-.extension .dropdown > div .form-container.text textarea:focus,
-.extension .dropdown > div .form-container.textarea textarea:focus,
-.extension .dropdown > div .form-container.text input[type=text]:active,
-.extension .dropdown > div .form-container.textarea input[type=text]:active,
-.extension .dropdown > div .form-container.text textarea:active,
-.extension .dropdown > div .form-container.textarea textarea:active {
+.extension .dropdown .dropdown-item .form-container.text input[type=text]:focus,
+.extension .dropdown .dropdown-item .form-container.textarea input[type=text]:focus,
+.extension .dropdown .dropdown-item .form-container.text textarea:focus,
+.extension .dropdown .dropdown-item .form-container.textarea textarea:focus,
+.extension .dropdown .dropdown-item .form-container.text input[type=text]:active,
+.extension .dropdown .dropdown-item .form-container.textarea input[type=text]:active,
+.extension .dropdown .dropdown-item .form-container.text textarea:active,
+.extension .dropdown .dropdown-item .form-container.textarea textarea:active {
   border-color: #00ad55;
 }
-.extension .dropdown > div .form-container.text label,
-.extension .dropdown > div .form-container.textarea label {
+.extension .dropdown .dropdown-item .form-container.text label,
+.extension .dropdown .dropdown-item .form-container.textarea label {
   position: absolute;
   top: -8px;
   left: 5px;
@@ -157,7 +165,7 @@
   background-color: #ffffff;
   font-size: 11px;
 }
-.extension .dropdown > div button {
+.extension .dropdown .dropdown-item button {
   padding: 7px 12px;
   border-radius: 4px;
   margin: 20px 25px 0 auto;
@@ -168,11 +176,26 @@
   font-weight: bold;
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
 }
-.extension .dropdown > div button:hover {
+.extension .dropdown .dropdown-item button:hover {
   cursor: pointer;
 }
-.extension .dropdown > div button:active {
+.extension .dropdown .dropdown-item button:active {
   box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+}
+.extension .dropdown .dropdown-item .btn-group {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.extension .dropdown .dropdown-item::-webkit-scrollbar {
+  width: 3px;
+  height: 3px;
+}
+.extension .dropdown .dropdown-item::-webkit-scrollbar-thumb {
+  background-color: #c4c8c7;
+}
+.extension .dropdown .dropdown-item::-webkit-scrollbar-thumb:hover {
+  background: #707070;
 }
 .extension .dropdown .add-comments .box-resize {
   position: absolute;
@@ -187,17 +210,4 @@
   width: 14px;
   transform: rotate(-45deg);
   fill: #707070;
-}
-.extension .dropdown .dropdown-item {
-  overflow: auto;
-}
-.extension .dropdown .dropdown-item::-webkit-scrollbar {
-  width: 3px;
-  height: 3px;
-}
-.extension .dropdown .dropdown-item::-webkit-scrollbar-thumb {
-  background-color: #c4c8c7;
-}
-.extension .dropdown .dropdown-item::-webkit-scrollbar-thumb:hover {
-  background: #707070;
 }

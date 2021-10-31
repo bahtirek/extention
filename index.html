@@ -38,12 +38,15 @@
                     </svg>
                     <!-- <svg class="review" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-eye"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg> -->
                 </span>
-                <span class="operator alwayOn" data-title="Report" onclick="activateOperator(id);" id="report-button">
+                <!-- <span class="operator alwayOn" data-title="Report" onclick="activateOperator(id);" id="report-button">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                         stroke-linecap="round" stroke-linejoin="round" class="feather feather-external-link">
                         <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
                         <polyline points="15 3 21 3 21 9" />
                         <line x1="10" y1="14" x2="21" y2="3" /></svg>
+                </span> -->
+                <span class="operator alwayOn" data-title="Report" onclick="activateOperator(id);" id="report-button">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-download"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
                 </span>
                 <span class="operator alwayOn" data-title="Delete" onclick="activateOperator(id);" id="delete-button">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -84,21 +87,30 @@
                 <h4 class="drop-title">Add comments</h4>
                 <div class="drop-body">
                     <div class="form-container text">
-                        <label for="title">Title</label>
-                        <input type="text" name="title" id="title" onclick="select()">
+                        <label for="description">Description</label>
+                        <textarea name="description" id="description" rows="2" onclick="select()" data-gramm="false"></textarea>
                     </div>
                     <div class="form-container textarea">
-                        <label for="notes">Result</label>
-                        <textarea name="notes" id="notes" rows="3" onclick="select()" data-gramm="false"></textarea>
+                        <label for="rep-results">Actual results</label>
+                        <textarea name="rep-results" id="rep-results" rows="3" onclick="select()" data-gramm="false"></textarea>
                     </div>
                     <div class="form-container textarea">
-                        <label for="notes">Expected</label>
-                        <textarea name="notes" id="notes" rows="3" onclick="select()" data-gramm="false"></textarea>
+                        <label for="exp-results">Expected results</label>
+                        <textarea name="exp-results" id="exp-results" rows="3" onclick="select()" data-gramm="false"></textarea>
                     </div>
                     <div class="form-container textarea">
-                        <label for="notes">Additional Notes</label>
-                        <textarea name="notes" id="notes" rows="2" onclick="select()" data-gramm="false"></textarea>
+                        <label for="rep-steps">Steps to reproduce</label>
+                        <textarea name="rep-steps" id="rep-steps" rows="3" onclick="select()" data-gramm="false"></textarea>
                     </div>
+                </div>
+                <div class="form-container checkbox">
+                    <input type="checkbox" name="jira" id="jira" value="jira">
+                    <label for="jira">Create Jira ticket on save</label>
+                </div>
+                <div class="form-container checkbox">
+                    <input type="checkbox" name="img" id="img" value="img">
+                    <label for="jira">Attach screenshot</label>
+                    <span class="disclaimer">Make sure to remove personal identity information</span>
                 </div>
                 <button>Save</button>
                 <div class="box-resize" id="boxResize">
@@ -112,12 +124,15 @@
             </div>
             <div class="dropdown-item review" id="review">
                 <h4 class="drop-title">Review</h4>
-
+                <div class="drop-body">
+                    choose selection fro review
+                </div>
             </div>
             <div class="dropdown-item report" id="report">
-                <h4 class="drop-title">Report type</h4>
+                <h4 class="drop-title">Save as</h4>
                 <div class="drop-body">
-                    <div class="form-container checkbox">
+                    List of selections
+                    <!-- <div class="form-container checkbox">
                         <input type="checkbox" name="bizniki" id="bizniki" value="bizniki">
                         <label for="bizniki">Bizniki</label>
                     </div>
@@ -140,9 +155,13 @@
                     <div class="form-container checkbox">
                         <input type="checkbox" name="word" id="word" value="word">
                         <label for="word">MS Word</label>
-                    </div>
+                    </div> -->
                 </div>
-                <button>Report</button>
+                <div class="btn-group">
+                    <button>PDF</button>
+                    <button>Word</button>
+                </div>
+                
             </div>
             <div class="dropdown-item settings" id="settings">
                 <h4 class="drop-title">Settings</h4>
