@@ -5,13 +5,14 @@ moveExtension();
 
 function moveExtension() {
     let extension = document.getElementById('extension');
+    let header = document.getElementById('header');
     let extensionPosTop = 0;
     let extensionPosLeft = 0;
 
-    this.extension.addEventListener('mousedown',function(event){
+    this.header.addEventListener('mousedown',function(event){
         event.stopPropagation();
         event.preventDefault();
-        if(event.target === extension) {
+        if(event.target === header) {
             let rect = event.target.getBoundingClientRect();
             extensionPosTop = event.clientY - rect.top;
             extensionPosLeft = event.clientX - rect.left;
@@ -19,7 +20,7 @@ function moveExtension() {
         }
     },true);
 
-    this.extension.addEventListener('mouseup',function(event){
+    this.header.addEventListener('mouseup',function(event){
         event.stopPropagation();
         event.preventDefault();
         onMouseUp(followMouse);

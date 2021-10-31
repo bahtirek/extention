@@ -3,7 +3,6 @@
   left: 50%;
   top: 30px;
   border-radius: 3px;
-  padding: 10px 10px 3px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
@@ -11,11 +10,17 @@
   font-family: Arial;
   flex-direction: column;
   pointer-events: initial !important;
+  min-width: 350px;
+  padding-bottom: 10px;
 }
 .extension * {
   pointer-events: initial !important;
 }
-.extension:hover {
+.extension .header {
+  padding: 10px 10px 0px;
+  margin-bottom: -5px;
+}
+.extension .header:hover {
   cursor: move;
 }
 .extension .menu-container {
@@ -84,8 +89,8 @@
 }
 .extension .dropdown > div {
   display: none;
-  max-height: 500px;
   padding-bottom: 10px;
+  padding: 10px 10px;
   cursor: default;
 }
 .extension .dropdown > div h4 {
@@ -168,4 +173,31 @@
 }
 .extension .dropdown > div button:active {
   box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+}
+.extension .dropdown .add-comments .box-resize {
+  position: absolute;
+  right: -1px;
+  bottom: -1px;
+  width: 14px;
+  height: 14px;
+  cursor: se-resize;
+}
+.extension .dropdown .add-comments .box-resize svg {
+  height: 14px;
+  width: 14px;
+  transform: rotate(-45deg);
+  fill: #707070;
+}
+.extension .dropdown .dropdown-item {
+  overflow: auto;
+}
+.extension .dropdown .dropdown-item::-webkit-scrollbar {
+  width: 3px;
+  height: 3px;
+}
+.extension .dropdown .dropdown-item::-webkit-scrollbar-thumb {
+  background-color: #c4c8c7;
+}
+.extension .dropdown .dropdown-item::-webkit-scrollbar-thumb:hover {
+  background: #707070;
 }
