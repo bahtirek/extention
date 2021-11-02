@@ -1,0 +1,32 @@
+{
+    "name": "Bug Report",
+    "description": "Bug report",
+    "version": "1.0",
+    "manifest_version": 2,
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "content.js",
+                "extension-move.js",
+                "extension-resize.js",
+                "helper-utils.js",
+                "mousedown.js",
+                "select.js"
+            ],
+            "css": ["styles.css"]
+        }
+    ],
+    "web_accessible_resources": [
+        "extension.html"
+    ],
+    "permissions": ["storage"],
+    "browser_action": {
+        "default_icon": "icon.png"
+    }
+  }

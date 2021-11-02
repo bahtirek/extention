@@ -12,6 +12,8 @@
   pointer-events: initial !important;
   min-width: 350px;
   padding-bottom: 10px;
+  background-color: #ffffff;
+  z-index: 99999999;
 }
 .extension * {
   pointer-events: initial !important;

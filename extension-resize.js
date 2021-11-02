@@ -1,8 +1,8 @@
-moveExtension();
 
 
-function moveExtension() {
-    
+
+function resizeExtension() {
+    console.log('resize');
     let extension = document.getElementById('extension');
     let commentBox = document.getElementById('comment');
     let boxResize = document.getElementById('boxResize');
@@ -11,6 +11,7 @@ function moveExtension() {
     let mouseInitialY = 0;
 
     this.boxResize.addEventListener('mousedown',function(e){
+        console.log(e);
         e.stopPropagation();
         e.preventDefault();
         let rect = e.target.getBoundingClientRect();

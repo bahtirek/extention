@@ -1,9 +1,9 @@
 
 window.bugReportExtension = {};
 
-moveExtension();
 
 function moveExtension() {
+    document.getElementById('comment-button').addEventListener('click', activateOperator('comment-button'));
     let extension = document.getElementById('extension');
     let header = document.getElementById('header');
     let extensionPosTop = 0;
