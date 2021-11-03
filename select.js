@@ -1,7 +1,7 @@
 function onSelect(){
 
-    let noPointerEvent = '*:not(body){pointer-events: none!important; }';
-    let noHighlight = `*{
+    const noPointerEvent = 'body *{pointer-events: none; }';
+    const noHighlight = `*{
         -webkit-tap-highlight-color: transparent;
         -webkit-touch-callout: none;
         -webkit-user-select: none;
@@ -10,8 +10,10 @@ function onSelect(){
         -ms-user-select: none;
         user-select: none;
       }`;
-    head = document.head || document.getElementsByTagName('head')[0],
-    style = document.createElement('style');
+    const head = document.head || document.getElementsByTagName('head')[0];
+
+    const style = document.createElement('style');
+
     style.setAttribute('id','ui-br-ext-extention-style');    
 
     head.appendChild(style);
@@ -22,10 +24,40 @@ function onSelect(){
     } else {
         style.appendChild(document.createTextNode(noPointerEvent+noHighlight));
     }
+
+    addClickToBody();
 }
 
 function onDeselect(){
 
     document.getElementById('ui-br-ext-extention-style')?.remove();
 
+    //removeClickFromBody();
+
+}
+
+function addClickToBody(){
+
+    const body = document.getElementsByTagName('body')[0];
+
+    body.addEventListener('mousedown', function (event) {
+        getMouseCoordinates(event);
+    }, true);
+
+}
+
+function removeClickFromBody(){
+
+    const body = document.getElementsByTagName('body')[0];
+
+    body.removeEventListener('mousedown', getMouseCoordinates());
+
+}
+
+function getMouseCoordinates(event){
+
+    const pageX = event.pageX;
+
+    console.log(pageX);
+    
 }
