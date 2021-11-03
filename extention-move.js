@@ -26,11 +26,12 @@ function moveExtention() {
     },true);
 
     function followMouse(e){
-        if (e.pageY > 0 && e.pageY < window.innerHeight){
-            extension.style.top = e.pageY - extensionPosTop + "px";
+        console.log(e.clientX, e.clientY);
+        if (e.clientY > 0 && e.clientY < window.innerHeight){
+            extension.style.top = e.clientY - extensionPosTop + "px";
         }
-        if (e.pageX > 0 && e.pageX < window.innerWidth){
-            extension.style.left = e.pageX - extensionPosLeft + "px";
+        if (e.clientX > 0 && e.clientX < window.innerWidth){
+            extension.style.left = e.clientX - extensionPosLeft + "px";
         }
     }
 } 

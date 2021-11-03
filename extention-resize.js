@@ -10,13 +10,11 @@ function resizeExtention() {
     let mouseInitialY = 0;
 
     boxResize.addEventListener('mousedown',function(e){
-        console.log(e);
         e.stopPropagation();
         e.preventDefault();
         let rect = e.target.getBoundingClientRect();
         mouseInitialY = rect.bottom - e.clientY;
         mouseInitialX = rect.right - e.clientX;
-        console.log(mouseInitialY, mouseInitialX);
         onMouseDown(followMouse);
         commentBox.addEventListener('click', function(){
             e.stopPropagation();
@@ -42,12 +40,12 @@ function resizeExtention() {
         if (commentRect.width < 350 || commentRect.height < 200) {
             onMouseUp();
         }
-        if (e.pageY > 0 && e.pageY < window.innerHeight){
+        if (e.clientY > 0 && e.clientY < window.innerHeight){
             if (e.clientY - commentRect.top - mouseInitialY > 200 ) {
                 commentBox.style.height = e.clientY - commentRect.top - 10  + "px";
             }
         }
-        if (e.pageX > 0 && e.pageX < window.innerWidth){
+        if (e.clientX > 0 && e.clientX < window.innerWidth){
             if (e.clientX - commentRect.left - mouseInitialX > 350) {
                 commentBox.style.width = e.clientX - commentRect.left  + "px";
             }
