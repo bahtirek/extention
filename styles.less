@@ -1,6 +1,6 @@
 @primary-color: #00ad55;
 
-.ui-br-ext-extension {
+.ui-br-ext-extention {
     position: fixed;
     left: 50%;
     top: 30px;
@@ -16,7 +16,11 @@
     padding-bottom: 10px;
     background-color: #ffffff;
     z-index: 99999999;
-    line-height: normal !important;
+    line-height: normal!important;
+
+    &.ui-br-ext-moving {
+        opacity: 0.8;
+    }
 
     * {
         pointer-events: initial !important;
@@ -140,11 +144,12 @@
                     input[type=checkbox] {
                         height: 18px;
                         width: 18px;
-                        margin-right: 10px;
+                        margin: 3px 10px 3px 4px;
                     }
 
                     label {
                         font-size: 15px;
+                        font-weight: normal!important;
                     }
 
                     .ui-br-ext-disclaimer {
@@ -158,7 +163,7 @@
 
                 &.ui-br-ext-text,
                 &.ui-br-ext-textarea {
-                    margin-bottom: 20px;
+                    margin-bottom: 16px;
 
                     input[type=text],
                     textarea {
@@ -184,13 +189,15 @@
                         padding: 0px 3px;
                         background-color: #ffffff;
                         font-size: 11px;
+                        font-weight: normal !important;
                     }
                 }
 
             }
 
             .ui-br-ext-btn {
-                height: 29px !important;
+                font-size: 14px!important;
+                height: 29px!important;
                 padding: 7px 12px;
                 border-radius: 4px;
                 margin: 20px 25px 0 auto;
@@ -231,7 +238,21 @@
         }
 
         .ui-br-ext-add-comments {
-            //position: relative;
+            flex-direction: column;
+
+            .ui-br-ext-drop-body{
+                flex-grow: 1;
+                display: flex;
+                flex-direction: column;
+
+                .ui-br-ext-textarea {
+                    flex: 1 1 0;
+
+                    &:first-child {
+                        max-height: 15%;
+                    }
+                }
+            }
 
             .ui-br-ext-box-resize {
                 position: absolute;
@@ -247,6 +268,10 @@
                     transform: rotate(-45deg);
                     fill: #707070;
                 }
+            }
+
+            &.ui-br-ext-active {
+                display: flex;
             }
         }
     }

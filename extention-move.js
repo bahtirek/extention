@@ -1,20 +1,21 @@
 
-window.bugReportExtension = {};
+window.bugReportextention = {};
 
 
 function moveExtention() {
-    let extension = document.getElementById('ui-br-ext-extension');
+    let extention = document.getElementById('ui-br-ext-extention');
     let header = document.getElementById('ui-br-ext-header');
-    let extensionPosTop = 0;
-    let extensionPosLeft = 0;
+    let extentionPosTop = 0;
+    let extentionPosLeft = 0;
 
     header.addEventListener('mousedown',function(event){
         event.stopPropagation();
         event.preventDefault();
         if(event.target === header) {
             let rect = event.target.getBoundingClientRect();
-            extensionPosTop = event.clientY - rect.top;
-            extensionPosLeft = event.clientX - rect.left;
+            extentionPosTop = event.clientY - rect.top;
+            extentionPosLeft = event.clientX - rect.left;
+            extention.classList.add('ui-br-ext-moving');
             onMouseDown(followMouse);
         }
     },true);
@@ -22,16 +23,17 @@ function moveExtention() {
     header.addEventListener('mouseup',function(event){
         event.stopPropagation();
         event.preventDefault();
+        extention.classList.remove('ui-br-ext-moving');
         onMouseUp(followMouse);
     },true);
 
     function followMouse(e){
         console.log(e.clientX, e.clientY);
         if (e.clientY > 0 && e.clientY < window.innerHeight){
-            extension.style.top = e.clientY - extensionPosTop + "px";
+            extention.style.top = e.clientY - extentionPosTop + "px";
         }
         if (e.clientX > 0 && e.clientX < window.innerWidth){
-            extension.style.left = e.clientX - extensionPosLeft + "px";
+            extention.style.left = e.clientX - extentionPosLeft + "px";
         }
     }
 } 

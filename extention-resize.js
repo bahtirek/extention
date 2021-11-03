@@ -2,7 +2,7 @@
 
 
 function resizeExtention() {
-    let extention = document.getElementById('ui-br-ext-extension');
+    let extention = document.getElementById('ui-br-ext-extention');
     let commentBox = document.getElementById('ui-br-ext-comment');
     let boxResize = document.getElementById('ui-br-ext-boxResize');
     let commentRect = commentBox.getBoundingClientRect();
