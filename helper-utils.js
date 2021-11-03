@@ -1,21 +1,31 @@
+/** 
+ * It is called on extension (page) load to add a click
+ * event listener to each operator button. The click event will call the 
+ * activateOperator() that uses the switch case to perform various tasks.
+ */
 function setButtonListeners(){
     document.querySelectorAll('.ui-br-ext-operator').forEach(operator => {
-        console.log(operator.id);
         operator.addEventListener('click', function () {
-            activateOperator(operator.id)
+            activateOperator(operator.id, operator.classList)
         })
 
     });
 }
 
-
-function activateOperator(operatorId){
+/**
+ * It is used to set the corresponding class to the operator
+ * buttons. If button is inactive, all other operators switch to inactive state,
+ * only the clicked button remains active. If clicked button is active,
+ * all operator switch to inactive state, including the clicked operator button.
+ * @param {The ID of the clicked operator button} operatorId 
+ */
+function setOperatorIconStyle(operatorId, operatorClassList){
 
     let operator = document.getElementById(operatorId);
 
-    closeDropdown();
+    let buttonActive = false;
 
-    if(!operator.classList.contains('ui-br-ext-active')){
+    if(!operatorClassList.contains('ui-br-ext-active')){
 
         document.querySelectorAll('.ui-br-ext-operator').forEach(operator => {
 
@@ -23,7 +33,46 @@ function activateOperator(operatorId){
     
         });
     
-        document.getElementById(operatorId).classList.add('ui-br-ext-active');
+        operator.classList.add('ui-br-ext-active');
+
+        buttonActive = true;
+
+    }else{
+
+        operator.classList.remove('ui-br-ext-active');
+
+        buttonActive = false;
+
+    }
+
+    return buttonActive;
+
+}
+
+/**
+ * It is used to reset any active operator processes such as 
+ * displayed drop down for comment box.
+ */
+function resetAllOperators(){
+
+    onDeselect();
+
+    closeDropdown();
+
+}
+
+/**
+ * It plays the role of activator function for each operator button.
+ * It gets added as "click" event listener on extension load.
+ * The switch case performs variouls logical tasks based on the operator button's ID.
+ * @param {The ID of the clicked operator button} operatorId 
+ * @param {The ClassList of the clicked operator button} operatorClassList 
+ */
+function activateOperator(operatorId, operatorClassList){
+
+    resetAllOperators();
+
+    if(setOperatorIconStyle(operatorId, operatorClassList)){
 
         switch(operatorId){
 
@@ -32,38 +81,22 @@ function activateOperator(operatorId){
                 break;
 
             case 'ui-br-ext-comment-button':
-                onSelect();
                 openDropdown('ui-br-ext-comment');
                 break;
 
             case 'ui-br-ext-review-button':
-                onSelect();
                 openDropdown('ui-br-ext-review');
                 break;
 
             case 'ui-br-ext-report-button':
-                onSelect();
                 openDropdown('ui-br-ext-report');
                 break;
 
             case 'ui-br-ext-settings-button':
-                onSelect();
                 openDropdown('ui-br-ext-settings');
                 break;
         }
-    }else{
-
-        operator.classList.remove('ui-br-ext-active');
-
-        switch(operatorId){
-
-            case 'ui-br-ext-select-button':
-                onDeselect();
-                break;
-        }
-
-    }
-
+    }   
 }
 
 function openDropdown(dropItemId) {

@@ -22,15 +22,10 @@ function onSelect(){
     } else {
         style.appendChild(document.createTextNode(noPointerEvent+noHighlight));
     }
-
-    // css bilan tugirladim
-    /* document.querySelectorAll('.alwayOn').forEach(element => {
-        element.style.pointerEvents ='auto';
-    }); */
 }
 
 function onDeselect(){
 
-    document.getElementById('ui-br-ext-extention-style').remove();
+    document.getElementById('ui-br-ext-extention-style')?.remove();
 
 }
