@@ -1,24 +1,29 @@
 
 
 
-function resizeExtension() {
-    console.log('resize');
-    let extension = document.getElementById('extension');
-    let commentBox = document.getElementById('comment');
-    let boxResize = document.getElementById('boxResize');
+function resizeExtention() {
+    let extention = document.getElementById('ui-br-ext-extension');
+    let commentBox = document.getElementById('ui-br-ext-comment');
+    let boxResize = document.getElementById('ui-br-ext-boxResize');
     let commentRect = commentBox.getBoundingClientRect();
     let mouseInitialX = 0;
     let mouseInitialY = 0;
 
-    this.boxResize.addEventListener('mousedown',function(e){
+    boxResize.addEventListener('mousedown',function(e){
         console.log(e);
         e.stopPropagation();
         e.preventDefault();
         let rect = e.target.getBoundingClientRect();
         mouseInitialY = rect.bottom - e.clientY;
         mouseInitialX = rect.right - e.clientX;
+        console.log(mouseInitialY, mouseInitialX);
         onMouseDown(followMouse);
         commentBox.addEventListener('click', function(){
+            e.stopPropagation();
+            e.preventDefault();
+            onMouseUp(followMouse)
+        } )
+        extention.addEventListener('click', function(){
             e.stopPropagation();
             e.preventDefault();
             onMouseUp(followMouse)
@@ -26,7 +31,7 @@ function resizeExtension() {
     },true);
     
 
-    this.boxResize.addEventListener('mouseup',function(event){
+    boxResize.addEventListener('mouseup',function(event){
         event.stopPropagation();
         event.preventDefault();
         onMouseUp(followMouse);
@@ -39,12 +44,12 @@ function resizeExtension() {
         }
         if (e.pageY > 0 && e.pageY < window.innerHeight){
             if (e.clientY - commentRect.top - mouseInitialY > 200 ) {
-                commentBox.style.height = e.clientY - commentRect.top - mouseInitialY + "px";
+                commentBox.style.height = e.clientY - commentRect.top - 10  + "px";
             }
         }
         if (e.pageX > 0 && e.pageX < window.innerWidth){
-            if (e.clientX - commentRect.left - mouseInitialY > 350) {
-                commentBox.style.width = e.clientX - commentRect.left - mouseInitialY + "px";
+            if (e.clientX - commentRect.left - mouseInitialX > 350) {
+                commentBox.style.width = e.clientX - commentRect.left  + "px";
             }
         }
     }

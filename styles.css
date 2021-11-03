@@ -1,4 +1,4 @@
-.extension {
+.ui-br-ext-extension {
   position: fixed;
   left: 50%;
   top: 30px;
@@ -14,64 +14,65 @@
   padding-bottom: 10px;
   background-color: #ffffff;
   z-index: 99999999;
+  line-height: normal!important;
 }
-.extension * {
+.ui-br-ext-extension * {
   pointer-events: initial !important;
 }
-.extension .header {
+.ui-br-ext-extension .ui-br-ext-header {
   padding: 10px 10px 0px;
   margin-bottom: -5px;
 }
-.extension .header:hover {
+.ui-br-ext-extension .ui-br-ext-header:hover {
   cursor: move;
 }
-.extension .menu-container {
+.ui-br-ext-extension .ui-br-ext-menu-container {
   display: flex;
   position: relative;
   cursor: default;
 }
-.extension .menu-container span {
+.ui-br-ext-extension .ui-br-ext-menu-container span {
   padding: 3px 2px;
   margin: 0 8px;
   display: flex;
   position: relative;
 }
-.extension .menu-container span:hover {
+.ui-br-ext-extension .ui-br-ext-menu-container span:hover {
   cursor: pointer;
 }
-.extension .menu-container span:hover::before {
+.ui-br-ext-extension .ui-br-ext-menu-container span:hover::before {
   color: #000000;
   font-size: 10px;
   top: -16px;
 }
-.extension .menu-container span:hover svg {
+.ui-br-ext-extension .ui-br-ext-menu-container span:hover svg {
   color: #000000;
   transform: scale(1.2);
 }
-.extension .menu-container span svg {
+.ui-br-ext-extension .ui-br-ext-menu-container span svg {
   color: #404040;
   height: 20px;
   width: 20px;
   transition: 0.1s ease-out;
 }
-.extension .menu-container span svg.review {
+.ui-br-ext-extension .ui-br-ext-menu-container span svg.review {
   position: absolute;
   top: 2px;
   left: 2px;
 }
-.extension .menu-container span:last-child {
+.ui-br-ext-extension .ui-br-ext-menu-container span:last-child {
   margin-right: 2px;
   margin-left: 8px;
 }
-.extension .menu-container span.active svg {
+.ui-br-ext-extension .ui-br-ext-menu-container span.ui-br-ext-active svg {
   color: #00ad55;
   transform: scale(1.3);
 }
-.extension .menu-container span.active::before {
+.ui-br-ext-extension .ui-br-ext-menu-container span.ui-br-ext-active::before {
   color: transparent;
   background: none;
 }
-.extension .menu-container span:before {
+.ui-br-ext-extension .ui-br-ext-menu-container span:before {
   content: attr(data-title);
   position: absolute;
   text-align: center;
@@ -86,80 +87,80 @@
   padding: 2px;
   white-space: nowrap;
 }
-.extension .dropdown {
+.ui-br-ext-extension .ui-br-ext-dropdown {
   cursor: default;
 }
-.extension .dropdown .dropdown-item {
+.ui-br-ext-extension .ui-br-ext-dropdown .ui-br-ext-dropdown-item {
   display: none;
   padding-bottom: 10px;
   padding: 10px 10px;
   cursor: default;
   overflow: auto;
 }
-.extension .dropdown .dropdown-item h4 {
+.ui-br-ext-extension .ui-br-ext-dropdown .ui-br-ext-dropdown-item h4 {
   color: #00ad55;
   border-bottom: 1px solid #00ad55;
   padding: 0 3px 3px;
 }
-.extension .dropdown .dropdown-item.active {
+.ui-br-ext-extension .ui-br-ext-dropdown .ui-br-ext-dropdown-item.ui-br-ext-active {
   display: block;
 }
-.extension .dropdown .dropdown-item .form-container {
+.ui-br-ext-extension .ui-br-ext-dropdown .ui-br-ext-dropdown-item .ui-br-ext-form-container {
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 10px;
   color: #707070;
   position: relative;
 }
-.extension .dropdown .dropdown-item .form-container.checkbox {
+.ui-br-ext-extension .ui-br-ext-dropdown .ui-br-ext-dropdown-item .ui-br-ext-form-container.ui-br-ext-checkbox {
   align-items: center;
 }
-.extension .dropdown .dropdown-item .form-container.checkbox input[type=checkbox] {
+.ui-br-ext-extension .ui-br-ext-dropdown .ui-br-ext-dropdown-item .ui-br-ext-form-container.ui-br-ext-checkbox input[type=checkbox] {
   height: 18px;
   width: 18px;
   margin-right: 10px;
 }
-.extension .dropdown .dropdown-item .form-container.checkbox label {
+.ui-br-ext-extension .ui-br-ext-dropdown .ui-br-ext-dropdown-item .ui-br-ext-form-container.ui-br-ext-checkbox label {
   font-size: 15px;
 }
-.extension .dropdown .dropdown-item .form-container.checkbox .disclaimer {
+.ui-br-ext-extension .ui-br-ext-dropdown .ui-br-ext-dropdown-item .ui-br-ext-form-container.ui-br-ext-checkbox .ui-br-ext-disclaimer {
   font-size: 11px;
   color: red;
   margin-left: 31px;
   width: 100%;
   box-sizing: border-box;
 }
-.extension .dropdown .dropdown-item .form-container.text,
-.extension .dropdown .dropdown-item .form-container.textarea {
+.ui-br-ext-extension .ui-br-ext-dropdown .ui-br-ext-dropdown-item .ui-br-ext-form-container.ui-br-ext-text,
+.ui-br-ext-extension .ui-br-ext-dropdown .ui-br-ext-dropdown-item .ui-br-ext-form-container.ui-br-ext-textarea {
   margin-bottom: 20px;
 }
-.extension .dropdown .dropdown-item .form-container.text input[type=text],
-.extension .dropdown .dropdown-item .form-container.textarea input[type=text],
-.extension .dropdown .dropdown-item .form-container.text textarea,
-.extension .dropdown .dropdown-item .form-container.textarea textarea {
+.ui-br-ext-extension .ui-br-ext-dropdown .ui-br-ext-dropdown-item .ui-br-ext-form-container.ui-br-ext-text input[type=text],
+.ui-br-ext-extension .ui-br-ext-dropdown .ui-br-ext-dropdown-item .ui-br-ext-form-container.ui-br-ext-textarea input[type=text],
+.ui-br-ext-extension .ui-br-ext-dropdown .ui-br-ext-dropdown-item .ui-br-ext-form-container.ui-br-ext-text textarea,
+.ui-br-ext-extension .ui-br-ext-dropdown .ui-br-ext-dropdown-item .ui-br-ext-form-container.ui-br-ext-textarea textarea {
   width: 100%;
   padding: 6px 14px;
   border: 1px solid #c4c8c9;
   border-radius: 4px;
 }
-.extension .dropdown .dropdown-item .form-container.text input[type=text]:focus-visible,
-.extension .dropdown .dropdown-item .form-container.textarea input[type=text]:focus-visible,
-.extension .dropdown .dropdown-item .form-container.text textarea:focus-visible,
-.extension .dropdown .dropdown-item .form-container.textarea textarea:focus-visible {
+.ui-br-ext-extension .ui-br-ext-dropdown .ui-br-ext-dropdown-item .ui-br-ext-form-container.ui-br-ext-text input[type=text]:focus-visible,
+.ui-br-ext-extension .ui-br-ext-dropdown .ui-br-ext-dropdown-item .ui-br-ext-form-container.ui-br-ext-textarea input[type=text]:focus-visible,
+.ui-br-ext-extension .ui-br-ext-dropdown .ui-br-ext-dropdown-item .ui-br-ext-form-container.ui-br-ext-text textarea:focus-visible,
+.ui-br-ext-extension .ui-br-ext-dropdown .ui-br-ext-dropdown-item .ui-br-ext-form-container.ui-br-ext-textarea textarea:focus-visible {
   outline: none;
 }
-.extension .dropdown .dropdown-item .form-container.text input[type=text]:focus,
-.extension .dropdown .dropdown-item .form-container.textarea input[type=text]:focus,
-.extension .dropdown .dropdown-item .form-container.text textarea:focus,
-.extension .dropdown .dropdown-item .form-container.textarea textarea:focus,
-.extension .dropdown .dropdown-item .form-container.text input[type=text]:active,
-.extension .dropdown .dropdown-item .form-container.textarea input[type=text]:active,
-.extension .dropdown .dropdown-item .form-container.text textarea:active,
-.extension .dropdown .dropdown-item .form-container.textarea textarea:active {
+.ui-br-ext-extension .ui-br-ext-dropdown .ui-br-ext-dropdown-item .ui-br-ext-form-container.ui-br-ext-text input[type=text]:focus,
+.ui-br-ext-extension .ui-br-ext-dropdown .ui-br-ext-dropdown-item .ui-br-ext-form-container.ui-br-ext-textarea input[type=text]:focus,
+.ui-br-ext-extension .ui-br-ext-dropdown .ui-br-ext-dropdown-item .ui-br-ext-form-container.ui-br-ext-text textarea:focus,
+.ui-br-ext-extension .ui-br-ext-dropdown .ui-br-ext-dropdown-item .ui-br-ext-form-container.ui-br-ext-textarea textarea:focus,
+.ui-br-ext-extension .ui-br-ext-dropdown .ui-br-ext-dropdown-item .ui-br-ext-form-container.ui-br-ext-text input[type=text]:active,
+.ui-br-ext-extension .ui-br-ext-dropdown .ui-br-ext-dropdown-item .ui-br-ext-form-container.ui-br-ext-textarea input[type=text]:active,
+.ui-br-ext-extension .ui-br-ext-dropdown .ui-br-ext-dropdown-item .ui-br-ext-form-container.ui-br-ext-text textarea:active,
+.ui-br-ext-extension .ui-br-ext-dropdown .ui-br-ext-dropdown-item .ui-br-ext-form-container.ui-br-ext-textarea textarea:active {
   border-color: #00ad55;
 }
-.extension .dropdown .dropdown-item .form-container.text label,
-.extension .dropdown .dropdown-item .form-container.textarea label {
+.ui-br-ext-extension .ui-br-ext-dropdown .ui-br-ext-dropdown-item .ui-br-ext-form-container.ui-br-ext-text label,
+.ui-br-ext-extension .ui-br-ext-dropdown .ui-br-ext-dropdown-item .ui-br-ext-form-container.ui-br-ext-textarea label {
   position: absolute;
   top: -8px;
   left: 5px;
@@ -167,7 +168,8 @@
   background-color: #ffffff;
   font-size: 11px;
 }
-.extension .dropdown .dropdown-item button {
+.ui-br-ext-extension .ui-br-ext-dropdown .ui-br-ext-dropdown-item .ui-br-ext-btn {
+  height: 29px!important;
   padding: 7px 12px;
   border-radius: 4px;
   margin: 20px 25px 0 auto;
@@ -178,28 +180,28 @@
   font-weight: bold;
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
 }
-.extension .dropdown .dropdown-item button:hover {
+.ui-br-ext-extension .ui-br-ext-dropdown .ui-br-ext-dropdown-item .ui-br-ext-btn:hover {
   cursor: pointer;
 }
-.extension .dropdown .dropdown-item button:active {
+.ui-br-ext-extension .ui-br-ext-dropdown .ui-br-ext-dropdown-item .ui-br-ext-btn:active {
   box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
 }
-.extension .dropdown .dropdown-item .btn-group {
+.ui-br-ext-extension .ui-br-ext-dropdown .ui-br-ext-dropdown-item .ui-br-ext-btn-group {
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
-.extension .dropdown .dropdown-item::-webkit-scrollbar {
+.ui-br-ext-extension .ui-br-ext-dropdown .ui-br-ext-dropdown-item::-webkit-scrollbar {
   width: 3px;
   height: 3px;
 }
-.extension .dropdown .dropdown-item::-webkit-scrollbar-thumb {
+.ui-br-ext-extension .ui-br-ext-dropdown .ui-br-ext-dropdown-item::-webkit-scrollbar-thumb {
   background-color: #c4c8c7;
 }
-.extension .dropdown .dropdown-item::-webkit-scrollbar-thumb:hover {
+.ui-br-ext-extension .ui-br-ext-dropdown .ui-br-ext-dropdown-item::-webkit-scrollbar-thumb:hover {
   background: #707070;
 }
-.extension .dropdown .add-comments .box-resize {
+.ui-br-ext-extension .ui-br-ext-dropdown .ui-br-ext-add-comments .ui-br-ext-box-resize {
   position: absolute;
   right: -1px;
   bottom: -1px;
@@ -207,7 +209,7 @@
   height: 14px;
   cursor: se-resize;
 }
-.extension .dropdown .add-comments .box-resize svg {
+.ui-br-ext-extension .ui-br-ext-dropdown .ui-br-ext-add-comments .ui-br-ext-box-resize svg {
   height: 14px;
   width: 14px;
   transform: rotate(-45deg);

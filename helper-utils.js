@@ -1,52 +1,63 @@
+function setButtonListeners(){
+    document.querySelectorAll('.ui-br-ext-operator').forEach(operator => {
+        console.log(operator.id);
+        operator.addEventListener('click', function () {
+            activateOperator(operator.id)
+        })
+
+    });
+}
+
+
 function activateOperator(operatorId){
 
     let operator = document.getElementById(operatorId);
 
     closeDropdown();
 
-    if(!operator.classList.contains('active')){
+    if(!operator.classList.contains('ui-br-ext-active')){
 
-        document.querySelectorAll('.operator').forEach(operator => {
+        document.querySelectorAll('.ui-br-ext-operator').forEach(operator => {
 
-            operator.classList.remove('active');
+            operator.classList.remove('ui-br-ext-active');
     
         });
     
-        document.getElementById(operatorId).classList.add('active');
+        document.getElementById(operatorId).classList.add('ui-br-ext-active');
 
         switch(operatorId){
 
-            case 'select-button':
+            case 'ui-br-ext-select-button':
                 onSelect();
                 break;
 
-            case 'comment-button':
+            case 'ui-br-ext-comment-button':
                 onSelect();
-                openDropdown('comment');
+                openDropdown('ui-br-ext-comment');
                 break;
 
-            case 'review-button':
+            case 'ui-br-ext-review-button':
                 onSelect();
-                openDropdown('review');
+                openDropdown('ui-br-ext-review');
                 break;
 
-            case 'report-button':
+            case 'ui-br-ext-report-button':
                 onSelect();
-                openDropdown('report');
+                openDropdown('ui-br-ext-report');
                 break;
 
-            case 'settings-button':
+            case 'ui-br-ext-settings-button':
                 onSelect();
-                openDropdown('settings');
+                openDropdown('ui-br-ext-settings');
                 break;
         }
     }else{
 
-        operator.classList.remove('active');
+        operator.classList.remove('ui-br-ext-active');
 
         switch(operatorId){
 
-            case 'select-button':
+            case 'ui-br-ext-select-button':
                 onDeselect();
                 break;
         }
@@ -57,15 +68,15 @@ function activateOperator(operatorId){
 
 function openDropdown(dropItemId) {
 
-    document.getElementById(dropItemId).classList.add('active');
+    document.getElementById(dropItemId).classList.add('ui-br-ext-active');
 
 }
 
 function closeDropdown() {
 
-    document.querySelectorAll('.extension .dropdown-item').forEach(operator => {
+    document.querySelectorAll('.ui-br-ext-extension .ui-br-ext-dropdown-item').forEach(operator => {
 
-        operator.classList.remove('active');
+        operator.classList.remove('ui-br-ext-active');
 
     });
 }

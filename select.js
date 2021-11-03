@@ -12,7 +12,7 @@ function onSelect(){
       }`;
     head = document.head || document.getElementsByTagName('head')[0],
     style = document.createElement('style');
-    style.setAttribute('id','extention-style');    
+    style.setAttribute('id','ui-br-ext-extention-style');    
 
     head.appendChild(style);
 
@@ -31,6 +31,6 @@ function onSelect(){
 
 function onDeselect(){
 
-    document.getElementById('extention-style').remove();
+    document.getElementById('ui-br-ext-extention-style').remove();
 
 }

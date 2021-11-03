@@ -13,8 +13,8 @@
             ],
             "js": [
                 "content.js",
-                "extension-move.js",
-                "extension-resize.js",
+                "extention-move.js",
+                "extention-resize.js",
                 "helper-utils.js",
                 "mousedown.js",
                 "select.js"
@@ -23,7 +23,7 @@
         }
     ],
     "web_accessible_resources": [
-        "extension.html"
+        "extention.html"
     ],
     "permissions": ["storage"],
     "browser_action": {
