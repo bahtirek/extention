@@ -209,21 +209,26 @@
 .ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-dropdown-item::-webkit-scrollbar-thumb:hover {
   background: #707070;
 }
-.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-add-comments {
+.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-add-comments,
+.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-review {
   flex-direction: column;
 }
-.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-add-comments .ui-br-ext-drop-body {
+.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-add-comments .ui-br-ext-drop-body,
+.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-review .ui-br-ext-drop-body {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
 }
-.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-add-comments .ui-br-ext-drop-body .ui-br-ext-textarea {
+.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-add-comments .ui-br-ext-drop-body .ui-br-ext-textarea,
+.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-review .ui-br-ext-drop-body .ui-br-ext-textarea {
   flex: 1 1 0;
 }
-.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-add-comments .ui-br-ext-drop-body .ui-br-ext-textarea:first-child {
+.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-add-comments .ui-br-ext-drop-body .ui-br-ext-textarea:first-child,
+.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-review .ui-br-ext-drop-body .ui-br-ext-textarea:first-child {
   max-height: 15%;
 }
-.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-add-comments .ui-br-ext-box-resize {
+.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-add-comments .ui-br-ext-box-resize,
+.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-review .ui-br-ext-box-resize {
   position: absolute;
   right: -1px;
   bottom: -1px;
@@ -231,12 +236,17 @@
   height: 14px;
   cursor: se-resize;
 }
-.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-add-comments .ui-br-ext-box-resize svg {
+.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-add-comments .ui-br-ext-box-resize svg,
+.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-review .ui-br-ext-box-resize svg {
   height: 14px;
   width: 14px;
   transform: rotate(-45deg);
   fill: #707070;
 }
-.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-add-comments.ui-br-ext-active {
+.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-add-comments.ui-br-ext-active,
+.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-review.ui-br-ext-active {
   display: flex;
+}
+.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-review {
+  width: 350px;
 }
