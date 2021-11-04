@@ -28,7 +28,6 @@ function moveExtention() {
     },true);
 
     function followMouse(e){
-        console.log(e.clientX, e.clientY);
         if (e.clientY > 0 && e.clientY < window.innerHeight){
             extention.style.top = e.clientY - extentionPosTop + "px";
         }
