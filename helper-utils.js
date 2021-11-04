@@ -70,6 +70,7 @@ function resetAllOperators(){
  */
 function activateOperator(operatorId, operatorClassList){
 
+    // Resetting all operators before switching between operators.
     resetAllOperators();
 
     if(setOperatorIconStyle(operatorId, operatorClassList)){
@@ -96,6 +97,7 @@ function activateOperator(operatorId, operatorClassList){
                 openDropdown('ui-br-ext-settings');
                 break;
         }
+    }else{
     }   
 }
 
