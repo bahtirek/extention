@@ -230,6 +230,18 @@ body {
 .ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-review .ui-br-ext-drop-body .ui-br-ext-textarea:first-child {
   max-height: 15%;
 }
+.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-add-comments .ui-br-ext-drop-body .ui-br-ext-review-box .ui-br-ext-review-title,
+.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-review .ui-br-ext-drop-body .ui-br-ext-review-box .ui-br-ext-review-title {
+  color: #404040;
+  font-size: 16px;
+  font-weight: bold;
+}
+.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-add-comments .ui-br-ext-drop-body .ui-br-ext-review-box .ui-br-ext-review-text,
+.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-review .ui-br-ext-drop-body .ui-br-ext-review-box .ui-br-ext-review-text {
+  padding: 6px 0 10px;
+  font-size: 15px;
+  color: #666666;
+}
 .ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-add-comments .ui-br-ext-box-resize,
 .ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-review .ui-br-ext-box-resize {
   position: absolute;
