@@ -97,6 +97,7 @@ function activateOperator(operatorId, operatorClassList){
                 openDropdown('ui-br-ext-settings');
                 break;
         }
+    }else{
     }   
 }
 

@@ -25,39 +25,61 @@ function onSelect(){
         style.appendChild(document.createTextNode(noPointerEvent+noHighlight));
     }
 
-    addClickToBody();
+    addClickToBody(getMouseCoordinates);
 }
 
 function onDeselect(){
 
     document.getElementById('ui-br-ext-extention-style')?.remove();
 
-    //removeClickFromBody();
+    removeClickFromBody(getMouseCoordinates);
 
 }
 
-function addClickToBody(){
+function addClickToBody(eventFunction){
 
     const body = document.getElementsByTagName('body')[0];
 
-    body.addEventListener('mousedown', function (event) {
-        getMouseCoordinates(event);
-    }, true);
+    body.addEventListener('mousedown', eventFunction, true);
 
 }
 
-function removeClickFromBody(){
+function removeClickFromBody(eventFunction){
 
     const body = document.getElementsByTagName('body')[0];
 
-    body.removeEventListener('mousedown', getMouseCoordinates());
+    body.removeEventListener('mousedown', eventFunction, true);
 
 }
 
 function getMouseCoordinates(event){
 
-    const pageX = event.pageX;
+    if(event){
+        const pageX = event.pageX;
 
-    console.log(pageX);
+        const pageY = event.pageY;
+
+        findElementFromPoint(pageX, pageY);
+
+    } 
     
+}
+
+function findElementFromPoint(pageX, pageY){
+
+    // Temporarely removing 'pointer-evenet: none' style from head to find the element under pointer.
+    document.getElementById('ui-br-ext-extention-style')?.remove();
+
+    const element = document.elementFromPoint(pageX, pageY);
+
+    if(
+        element.tagName.toLocaleLowerCase() != 'body'
+        && element.closest('#ui-br-ext-extention') === null
+        ){
+        console.log(element);
+    }
+
+    // Enabling the 'pointer-evenet: none' after locating the element under the pointer.
+    onSelect();
+
 }
