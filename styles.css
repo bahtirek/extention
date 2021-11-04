@@ -1,3 +1,6 @@
+body {
+  pointer-events: 'all!important';
+}
 .ui-br-ext-extention {
   position: fixed;
   left: 50%;
