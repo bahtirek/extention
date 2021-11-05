@@ -17,7 +17,10 @@
                 "extention-resize.js",
                 "helper-utils.js",
                 "mousedown.js",
-                "select.js"
+                "select.js",
+                "jira-flow.js",
+                "screenshot.js",
+                "get-report.js"
             ],
             "css": ["styles.css"]
         }

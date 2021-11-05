@@ -1,7 +1,7 @@
 @primary-color: #00ad55;
 
-body{
-    pointer-events: 'all!important'; 
+body {
+    pointer-events: 'all!important';
 }
 
 .ui-br-ext-extention {
@@ -20,7 +20,7 @@ body{
     padding-bottom: 10px;
     background-color: #ffffff;
     z-index: 99999999;
-    line-height: normal!important;
+    line-height: normal !important;
 
     &.ui-br-ext-moving {
         opacity: 0.8;
@@ -153,7 +153,7 @@ body{
 
                     label {
                         font-size: 15px;
-                        font-weight: normal!important;
+                        font-weight: normal !important;
                     }
 
                     .ui-br-ext-disclaimer {
@@ -200,8 +200,8 @@ body{
             }
 
             .ui-br-ext-btn {
-                font-size: 14px!important;
-                height: 29px!important;
+                font-size: 14px !important;
+                height: 29px !important;
                 padding: 7px 12px;
                 border-radius: 4px;
                 margin: 20px 25px 0 auto;
@@ -241,10 +241,11 @@ body{
             }
         }
 
-        .ui-br-ext-add-comments, .ui-br-ext-review {
+        .ui-br-ext-add-comments,
+        .ui-br-ext-review {
             flex-direction: column;
 
-            .ui-br-ext-drop-body{
+            .ui-br-ext-drop-body {
                 flex-grow: 1;
                 display: flex;
                 flex-direction: column;
@@ -263,6 +264,7 @@ body{
                         font-size: 16px;
                         font-weight: bold;
                     }
+
                     .ui-br-ext-review-text {
                         padding: 6px 0 10px;
                         font-size: 15px;
@@ -292,8 +294,41 @@ body{
             }
         }
 
+        .ui-br-ext-spinner {
+            display: none;
+            width: 25px;
+            height: 10px;
+            position: relative;
+
+            &::before {
+                content: "";
+                background-image: url(assets/spinner.svg);
+                position: absolute;
+                top: -5px;
+                left: 0;
+                background-size: 20px 20px;
+                background-position: center;
+                background-repeat: no-repeat;
+                height: 20px;
+                width: 20px;
+                -webkit-animation: spin 1s infinite linear;
+            }
+            &.ui-br-ext-spinner-on {
+                display: inline-block;
+            }
+        }
+
         .ui-br-ext-review {
             width: 350px;
         }
     }
+
+    .show {
+        display: flex !important;
+    }
+}
+
+@-webkit-keyframes spin {
+    0%  {-webkit-transform: rotate(0deg);}
+    100% {-webkit-transform: rotate(360deg);}   
 }

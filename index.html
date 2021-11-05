@@ -9,6 +9,8 @@
     <script src="extention-resize.js"></script>
     <script src="select.js"></script>
     <script src="helper-utils.js"></script>
+    <script src="jira-flow.js"></script>
+    <script src="screenshot.js"></script>
     <link rel="stylesheet" href="styles.css">
     <title>Document</title>
 </head>
@@ -78,7 +80,7 @@
     
     
         <div class="ui-br-ext-container ui-br-ext-dropdown">
-            <div class="ui-br-ext-dropdown-item ui-br-ext-add-comments" id="ui-br-ext-comment">
+            <div class="ui-br-ext-dropdown-item ui-br-ext-add-comments show" id="ui-br-ext-comment">
                 <div class="ui-br-ext-drop-title">Add comments</div>
                 <div class="ui-br-ext-drop-body">
                     <div class="ui-br-ext-form-container ui-br-ext-textarea">
@@ -86,8 +88,8 @@
                         <textarea name="description" id="ui-br-ext-description" rows="2" onclick="select()" data-gramm="false"></textarea>
                     </div>
                     <div class="ui-br-ext-form-container ui-br-ext-textarea">
-                        <label for="rep-results">Actual results</label>
-                        <textarea name="rep-results" id="ui-br-ext-rep-results" rows="3" onclick="select()" data-gramm="false"></textarea>
+                        <label for="act-results">Actual results</label>
+                        <textarea name="act-results" id="ui-br-ext-act-results" rows="3" onclick="select()" data-gramm="false"></textarea>
                     </div>
                     <div class="ui-br-ext-form-container ui-br-ext-textarea">
                         <label for="exp-results">Expected results</label>
@@ -99,15 +101,18 @@
                     </div>
                 </div>
                 <div class="ui-br-ext-form-container ui-br-ext-checkbox">
-                    <input type="checkbox" name="jira" id="ui-br-ext-jira" value="jira">
+                    <input type="checkbox" name="jira" id="ui-br-ext-save-to-jira">
                     <label for="jira">Create Jira ticket on save</label>
                 </div>
                 <div class="ui-br-ext-form-container ui-br-ext-checkbox">
-                    <input type="checkbox" name="img" id="ui-br-ext-img" value="img">
-                    <label for="jira">Attach screenshot</label>
+                    <input type="checkbox" name="screenshot" id="ui-br-ext-save-screenshot">
+                    <label for="screenshot">Attach screenshot</label>
                     <span class="ui-br-ext-disclaimer">Make sure to remove personal identity information</span>
                 </div>
-                <button class="ui-br-ext-btn">Save</button>
+                <button class="ui-br-ext-btn" id="ui-br-ext-save-report">
+                    <span class="ui-br-ext-spinner"></span>
+                    <span>Save</span> 
+                </button>
                 <div class="ui-br-ext-box-resize" id="ui-br-comment-boxResize">
                     <svg version="1.1" viewBox="0 0 36 36" preserveAspectRatio="xMidYMid meet" focusable="false"
                         role="img" width="128" height="128" fill="currentColor">
@@ -172,6 +177,7 @@
         resizeExtention();
         moveExtention();
     </script>
+    <script src="get-report.js"></script>
 </body>
 
 </html>
