@@ -83,6 +83,7 @@ function activateOperator(operatorId, operatorClassList){
 
             case 'ui-br-ext-comment-button':
                 openDropdown('ui-br-ext-comment');
+                saveButtonInit();
                 break;
 
             case 'ui-br-ext-review-button':

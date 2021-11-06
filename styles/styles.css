@@ -271,7 +271,7 @@ body {
 }
 .ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-spinner::before {
   content: "";
-  background-image: url(assets/spinner.svg);
+  background-image: url("chrome-extension://__MSG_@@extension_id__/assets/spinner.svg");
   position: absolute;
   top: -5px;
   left: 0;

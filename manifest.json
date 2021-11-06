@@ -26,7 +26,8 @@
         }
     ],
     "web_accessible_resources": [
-        "extention.html"
+        "extention.html",
+        "assets/spinner.svg"
     ],
     "permissions": ["storage"],
     "browser_action": {

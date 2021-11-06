@@ -1,5 +1,5 @@
 @primary-color: #00ad55;
-
+@extensionId : ~"__MSG_@@extension_id__";
 body {
     pointer-events: 'all!important';
 }
@@ -303,7 +303,7 @@ body {
 
             &::before {
                 content: "";
-                background-image: url(assets/spinner.svg);
+                background-image: url("chrome-extension://@{extensionId}/assets/spinner.svg");
                 position: absolute;
                 top: -5px;
                 left: 0;

@@ -17,7 +17,16 @@ function NewReport () {
     this.screenshot = '';
 }
 
-document.getElementById('ui-br-ext-save-report').addEventListener('click', startReport, true);
+function saveButtonInit() {
+    setTimeout(function(){
+        let saveButton = document.getElementById('ui-br-ext-save-report');
+        console.log(saveButton.dataset['listener']);
+        if(saveButton && saveButton != null && saveButton.dataset.listener == "off") {
+            saveButton.dataset['listener'] = "on";
+            saveButton.addEventListener('click', startReport, true);
+        }
+    }, 500); 
+}
 
 async function startReport() {
     document.getElementsByClassName('ui-br-ext-spinner')[0].classList.add('ui-br-ext-spinner-on');
