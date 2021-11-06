@@ -24,8 +24,8 @@ async function startReport() {
     const report = collectData();
     if (report.saveScreenshot) {
         report.screenshot = await getScreenshot();
-        submitReport(report);
     }
+    submitReport(report);
 }
 
 function collectData(){

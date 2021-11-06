@@ -38,7 +38,6 @@ function resizeExtention() {
     
 
     function followMouseHandler(e, commentBox) {
-        console.log(commentBox);
         commentRect = commentBox.getBoundingClientRect();
         if (commentRect.width < 350 || commentRect.height < 200) {
             onMouseUp();
