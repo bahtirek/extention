@@ -37,6 +37,10 @@ function moveExtention() {
     }
 } 
 
+function hideExtention() {
+    document.getElementById('ui-br-ext-extention').style.display = 'none';
+}
+
 
 
 

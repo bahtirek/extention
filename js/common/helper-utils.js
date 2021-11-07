@@ -101,6 +101,10 @@ function activateOperator(operatorId, operatorClassList){
             case 'ui-br-ext-settings-button':
                 openDropdown('ui-br-ext-settings');
                 break;
+
+            case 'ui-br-ext-close-button':
+                hideExtention();
+                break;
         }
     }else{
     }   
