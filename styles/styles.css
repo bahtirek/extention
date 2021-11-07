@@ -214,36 +214,43 @@ body {
   background: #707070;
 }
 .ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-add-comments,
+.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-messages,
 .ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-review {
   flex-direction: column;
 }
 .ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-add-comments .ui-br-ext-drop-body,
+.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-messages .ui-br-ext-drop-body,
 .ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-review .ui-br-ext-drop-body {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
 }
 .ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-add-comments .ui-br-ext-drop-body .ui-br-ext-textarea,
+.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-messages .ui-br-ext-drop-body .ui-br-ext-textarea,
 .ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-review .ui-br-ext-drop-body .ui-br-ext-textarea {
   flex: 1 1 0;
 }
 .ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-add-comments .ui-br-ext-drop-body .ui-br-ext-textarea:first-child,
+.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-messages .ui-br-ext-drop-body .ui-br-ext-textarea:first-child,
 .ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-review .ui-br-ext-drop-body .ui-br-ext-textarea:first-child {
   max-height: 15%;
 }
 .ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-add-comments .ui-br-ext-drop-body .ui-br-ext-review-box .ui-br-ext-review-title,
+.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-messages .ui-br-ext-drop-body .ui-br-ext-review-box .ui-br-ext-review-title,
 .ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-review .ui-br-ext-drop-body .ui-br-ext-review-box .ui-br-ext-review-title {
   color: #404040;
   font-size: 16px;
   font-weight: bold;
 }
 .ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-add-comments .ui-br-ext-drop-body .ui-br-ext-review-box .ui-br-ext-review-text,
+.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-messages .ui-br-ext-drop-body .ui-br-ext-review-box .ui-br-ext-review-text,
 .ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-review .ui-br-ext-drop-body .ui-br-ext-review-box .ui-br-ext-review-text {
   padding: 2px 0 20px;
   font-size: 15px;
   color: #666666;
 }
 .ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-add-comments .ui-br-ext-box-resize,
+.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-messages .ui-br-ext-box-resize,
 .ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-review .ui-br-ext-box-resize {
   position: absolute;
   right: -1px;
@@ -253,6 +260,7 @@ body {
   cursor: se-resize;
 }
 .ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-add-comments .ui-br-ext-box-resize svg,
+.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-messages .ui-br-ext-box-resize svg,
 .ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-review .ui-br-ext-box-resize svg {
   height: 14px;
   width: 14px;
@@ -260,8 +268,12 @@ body {
   fill: #707070;
 }
 .ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-add-comments.ui-br-ext-active,
+.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-messages.ui-br-ext-active,
 .ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-review.ui-br-ext-active {
   display: flex;
+}
+.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-messages {
+  height: 300px;
 }
 .ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-spinner {
   display: none;

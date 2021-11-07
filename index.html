@@ -26,23 +26,21 @@
                         <path d="M13 13l6 6" /></svg>
                 </span>
                 <span class="ui-br-ext-operator ui-br-ext-alwaysOn" data-title="Add comments" id="ui-br-ext-comment-button">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-plus"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
+                </span>
+                <span class="ui-br-ext-operator ui-br-ext-alwaysOn" data-title="View comments" id="ui-br-ext-review-button">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><polyline points="10 9 9 9 8 9"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                </span>
+                <span class="ui-br-ext-operator ui-br-ext-alwaysOn" data-title="Messages" id="ui-br-ext-messages-button">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                         stroke-linecap="round" stroke-linejoin="round" class="ui-br-ext-feather feather-message-square">
                         <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
-                        <line x1="12" y1="13" x2="12" y2="7" />
-                        <line x1="9" y1="10" x2="15" y2="10" />
+                        
+                        <line x1="9" y1="8" x2="15" y2="8" />
+                        <line x1="9" y1="12" x2="13" y2="12" />
                     </svg>
                 </span>
-                <span class="ui-br-ext-operator ui-br-ext-alwaysOn" data-title="Review" id="ui-br-ext-review-button">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round" class="ui-br-ext-feather feather-message-square">
-                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
-                        <polyline stroke="#ffffff" points="8 6 12 10 22 0" />
-                        <polyline points="9 9 12 12 22 2" />
-                        <polyline stroke="#ffffff" points="10 13 12 15 22 4" />
-                    </svg>
-                </span>
-                <span class="ui-br-ext-operator ui-br-ext-alwaysOn" data-title="Report" id="ui-br-ext-report-button">
+                <span class="ui-br-ext-operator ui-br-ext-alwaysOn" data-title="Import" id="ui-br-ext-import-button">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ui-br-ext-feather feather-download"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
                 </span>
                 <span class="ui-br-ext-operator ui-br-ext-alwaysOn" data-title="Delete" id="ui-br-ext-delete-button">
@@ -122,6 +120,31 @@
                             class="ui-br-ext-clr-i-outline clr-i-outline-path-3" /></svg>
                 </div>
             </div>
+            <div class="ui-br-ext-dropdown-item ui-br-ext-messages" id="ui-br-ext-messages">
+                <div class="ui-br-ext-drop-title">Messages</div>
+                <div class="ui-br-ext-drop-body">
+                    
+                    
+                </div>
+                <div class="new-message">
+                    <div class="ui-br-ext-form-container ui-br-ext-textarea">
+                        <label for="rep-steps">Message</label>
+                        <textarea name="rep-steps" id="ui-br-ext-rep-steps" rows="3" onclick="select()" data-gramm="false"></textarea>
+                    </div>
+                    <button class="ui-br-ext-btn" id="ui-br-ext-save-message" data-listener="off">
+                        <span class="ui-br-ext-spinner"></span>
+                        <span>Send</span> 
+                    </button>
+                </div>
+                <div class="ui-br-ext-box-resize" id="ui-br-comment-boxResize">
+                    <svg version="1.1" viewBox="0 0 36 36" preserveAspectRatio="xMidYMid meet" focusable="false"
+                        role="img" width="128" height="128" fill="currentColor">
+                        <path d="M33,11H3a1,1,0,0,0,0,2H33a1,1,0,0,0,0-2Z" class="ui-br-ext-clr-i-outline clr-i-outline-path-1" />
+                        <path d="M28,17H8a1,1,0,0,0,0,2H28a1,1,0,0,0,0-2Z" class="ui-br-ext-clr-i-outline clr-i-outline-path-2" />
+                        <path d="M23,23H13a1,1,0,0,0,0,2H23a1,1,0,0,0,0-2Z"
+                            class="ui-br-ext-clr-i-outline clr-i-outline-path-3" /></svg>
+                </div>
+            </div>
             <div class="ui-br-ext-dropdown-item ui-br-ext-review" id="ui-br-ext-review">
                 <div class="ui-br-ext-drop-title">Review</div>
                 <div class="ui-br-ext-drop-body">
@@ -151,7 +174,7 @@
                             class="ui-br-ext-clr-i-outline clr-i-outline-path-3" /></svg>
                 </div>
             </div>
-            <div class="ui-br-ext-dropdown-item ui-br-ext-report" id="ui-br-ext-report">
+            <div class="ui-br-ext-dropdown-item ui-br-ext-import" id="ui-br-ext-import">
                 <div class="ui-br-ext-drop-title">Save as</div>
                 <div class="ui-br-ext-drop-body">
                     List of selections

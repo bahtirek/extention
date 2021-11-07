@@ -90,8 +90,12 @@ function activateOperator(operatorId, operatorClassList){
                 openDropdown('ui-br-ext-review');
                 break;
 
-            case 'ui-br-ext-report-button':
-                openDropdown('ui-br-ext-report');
+            case 'ui-br-ext-messages-button':
+                openDropdown('ui-br-ext-messages');
+                break;
+
+            case 'ui-br-ext-import-button':
+                openDropdown('ui-br-ext-import');
                 break;
 
             case 'ui-br-ext-settings-button':
