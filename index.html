@@ -120,20 +120,39 @@
                             class="ui-br-ext-clr-i-outline clr-i-outline-path-3" /></svg>
                 </div>
             </div>
-            <div class="ui-br-ext-dropdown-item ui-br-ext-messages" id="ui-br-ext-messages">
+            <div class="ui-br-ext-dropdown-item ui-br-ext-messages ui-br-ext-active" id="ui-br-ext-messages">
                 <div class="ui-br-ext-drop-title">Messages</div>
                 <div class="ui-br-ext-drop-body">
-                    
+                    <div class="messages">
+                        <div class="message">
+                            <div class="message-header">
+                                <div class="initials">BZ</div>
+                                <div class="message-date">11-12-21</div>
+                            </div>
+                            <div class="message-body">
+                                Lorem ipsum
+                            </div>
+                        </div>
+                        <div class="message">
+                            <div class="message-header">
+                                <div class="initials">BZ</div>
+                                <div class="message-date">11-12-21</div>
+                            </div>
+                            <div class="message-body">
+                                Lorem ipsum
+                            </div>
+                        </div>
+                    </div>
                     
                 </div>
-                <div class="new-message">
+                <div class="ui-br-ext-send-message">
                     <div class="ui-br-ext-form-container ui-br-ext-textarea">
                         <label for="rep-steps">Message</label>
                         <textarea name="rep-steps" id="ui-br-ext-rep-steps" rows="3" onclick="select()" data-gramm="false"></textarea>
                     </div>
                     <button class="ui-br-ext-btn" id="ui-br-ext-save-message" data-listener="off">
                         <span class="ui-br-ext-spinner"></span>
-                        <span>Send</span> 
+                        <span>Post</span> 
                     </button>
                 </div>
                 <div class="ui-br-ext-box-resize" id="ui-br-comment-boxResize">
@@ -188,6 +207,16 @@
             <div class="ui-br-ext-dropdown-item ui-br-ext-settings" id="ui-br-ext-settings">
                 <div class="ui-br-ext-drop-title">Settings</div>
     
+            </div>
+            <div class="ui-br-ext-dropdown-item ui-br-ext-dom-warning ui-br-ext-danger" id="ui-br-ext-dom-warning">
+                <div class="ui-br-ext-drop-title">Element selection</div>
+                <p>
+                    <span class="ui-br-ext-spinner ui-br-ext-spinner-on"></span>
+                    <strong>DOM inspection in progress</strong>
+                    <br> 
+                    <br> 
+                   <span>Some elements in ... conditions requires dom inspections</span>
+                </p>
             </div>
         </div>
     </div>

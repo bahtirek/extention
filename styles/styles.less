@@ -243,6 +243,7 @@ body {
         }
 
         .ui-br-ext-add-comments,
+        .ui-br-ext-select,
         .ui-br-ext-messages,
         .ui-br-ext-review {
             flex-direction: column;
@@ -298,7 +299,19 @@ body {
 
         .ui-br-ext-messages {
             height: 300px;
+            
+            .ui-br-ext-send-message {
+                display: flex;
+                .ui-br-ext-form-container {
+                    flex-grow: 1;
+                    margin-bottom: 0;
+                }
+                .ui-br-ext-btn {
+                    margin: 0px 0px 0px 16px;
+                }
+            }
         }
+
 
         .ui-br-ext-spinner {
             display: none;
@@ -309,6 +322,7 @@ body {
             &::before {
                 content: "";
                 background-image: url("chrome-extension://@{extensionId}/assets/spinner.svg");
+                background-image: url("../assets/spinner.svg");
                 position: absolute;
                 top: -5px;
                 left: 0;
@@ -327,10 +341,61 @@ body {
         .ui-br-ext-review {
             width: 350px;
         }
+        .ui-br-ext-dom-warning {
+            color: red;
+            width: 350px;
+            p{
+                background-color: cornsilk;
+                margin: 0% ;
+                padding: 16px;
+                span:not(.ui-br-ext-spinner) {
+                    font-size: 14px;
+                }
+            }
+            .ui-br-ext-spinner {
+                width: 35px;
+            }
+        }
     }
 
     .show {
         display: flex !important;
+    }
+
+    .messages {
+        .message{
+            padding: 16px 10px 10px;
+            border: 1px solid #c5dfc5;
+            border-radius: 3px;
+            position: relative;
+            //background-color: #b0f7b03b;
+            .message-header {
+                display: flex;
+                align-items: center;
+                position: absolute;
+                top: -13px;
+                left: 5px;
+                background-color: white;
+                padding: 0 5px;
+                .initials {
+                    background: tomato;
+                    color: white;
+                    padding: 3px 8px;
+                    border-radius: 20px;
+                    letter-spacing: 1px;
+                    line-height: 15px;
+                    margin-right: 10px;
+                    font-size: 14px;
+                }
+                .message-date {
+                    font-size: 10px;
+                    color: #666666;
+                }
+            }
+        }
+        .message-body {
+            font-size: 14px;
+        }
     }
 }
 
