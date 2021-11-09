@@ -81,21 +81,21 @@ function activateOperator(operatorId, operatorClassList){
                 onSelect();
                 break;
 
-            case 'ui-br-ext-comment-button':
-                openDropdown('ui-br-ext-comment');
+            case 'ui-br-ext-report-bug-button':
+                openDropdown('ui-br-ext-report-bug');
                 saveButtonInit();
                 break;
 
-            case 'ui-br-ext-review-button':
-                openDropdown('ui-br-ext-review');
+            case 'ui-br-ext-view-bug-button':
+                openDropdown('ui-br-ext-view-bug');
                 break;
 
-            case 'ui-br-ext-messages-button':
-                openDropdown('ui-br-ext-messages');
+            case 'ui-br-ext-comments-button':
+                openDropdown('ui-br-ext-comments');
                 break;
 
-            case 'ui-br-ext-import-button':
-                openDropdown('ui-br-ext-import');
+            case 'ui-br-ext-export-button':
+                openDropdown('ui-br-ext-export');
                 break;
 
             case 'ui-br-ext-settings-button':

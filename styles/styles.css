@@ -213,52 +213,52 @@ body {
 .ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-dropdown-item::-webkit-scrollbar-thumb:hover {
   background: #707070;
 }
-.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-add-comments,
+.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-report-bug,
 .ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-select,
-.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-messages,
-.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-review {
+.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-comments,
+.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-view-bug {
   flex-direction: column;
 }
-.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-add-comments .ui-br-ext-drop-body,
+.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-report-bug .ui-br-ext-drop-body,
 .ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-select .ui-br-ext-drop-body,
-.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-messages .ui-br-ext-drop-body,
-.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-review .ui-br-ext-drop-body {
+.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-comments .ui-br-ext-drop-body,
+.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-view-bug .ui-br-ext-drop-body {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
 }
-.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-add-comments .ui-br-ext-drop-body .ui-br-ext-textarea,
+.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-report-bug .ui-br-ext-drop-body .ui-br-ext-textarea,
 .ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-select .ui-br-ext-drop-body .ui-br-ext-textarea,
-.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-messages .ui-br-ext-drop-body .ui-br-ext-textarea,
-.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-review .ui-br-ext-drop-body .ui-br-ext-textarea {
+.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-comments .ui-br-ext-drop-body .ui-br-ext-textarea,
+.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-view-bug .ui-br-ext-drop-body .ui-br-ext-textarea {
   flex: 1 1 0;
 }
-.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-add-comments .ui-br-ext-drop-body .ui-br-ext-textarea:first-child,
+.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-report-bug .ui-br-ext-drop-body .ui-br-ext-textarea:first-child,
 .ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-select .ui-br-ext-drop-body .ui-br-ext-textarea:first-child,
-.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-messages .ui-br-ext-drop-body .ui-br-ext-textarea:first-child,
-.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-review .ui-br-ext-drop-body .ui-br-ext-textarea:first-child {
+.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-comments .ui-br-ext-drop-body .ui-br-ext-textarea:first-child,
+.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-view-bug .ui-br-ext-drop-body .ui-br-ext-textarea:first-child {
   max-height: 15%;
 }
-.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-add-comments .ui-br-ext-drop-body .ui-br-ext-review-box .ui-br-ext-review-title,
-.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-select .ui-br-ext-drop-body .ui-br-ext-review-box .ui-br-ext-review-title,
-.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-messages .ui-br-ext-drop-body .ui-br-ext-review-box .ui-br-ext-review-title,
-.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-review .ui-br-ext-drop-body .ui-br-ext-review-box .ui-br-ext-review-title {
+.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-report-bug .ui-br-ext-drop-body .ui-br-ext-view-bug-box .ui-br-ext-view-bug-title,
+.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-select .ui-br-ext-drop-body .ui-br-ext-view-bug-box .ui-br-ext-view-bug-title,
+.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-comments .ui-br-ext-drop-body .ui-br-ext-view-bug-box .ui-br-ext-view-bug-title,
+.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-view-bug .ui-br-ext-drop-body .ui-br-ext-view-bug-box .ui-br-ext-view-bug-title {
   color: #404040;
   font-size: 16px;
   font-weight: bold;
 }
-.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-add-comments .ui-br-ext-drop-body .ui-br-ext-review-box .ui-br-ext-review-text,
-.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-select .ui-br-ext-drop-body .ui-br-ext-review-box .ui-br-ext-review-text,
-.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-messages .ui-br-ext-drop-body .ui-br-ext-review-box .ui-br-ext-review-text,
-.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-review .ui-br-ext-drop-body .ui-br-ext-review-box .ui-br-ext-review-text {
+.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-report-bug .ui-br-ext-drop-body .ui-br-ext-view-bug-box .ui-br-ext-view-bug-text,
+.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-select .ui-br-ext-drop-body .ui-br-ext-view-bug-box .ui-br-ext-view-bug-text,
+.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-comments .ui-br-ext-drop-body .ui-br-ext-view-bug-box .ui-br-ext-view-bug-text,
+.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-view-bug .ui-br-ext-drop-body .ui-br-ext-view-bug-box .ui-br-ext-view-bug-text {
   padding: 2px 0 20px;
   font-size: 15px;
   color: #666666;
 }
-.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-add-comments .ui-br-ext-box-resize,
+.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-report-bug .ui-br-ext-box-resize,
 .ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-select .ui-br-ext-box-resize,
-.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-messages .ui-br-ext-box-resize,
-.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-review .ui-br-ext-box-resize {
+.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-comments .ui-br-ext-box-resize,
+.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-view-bug .ui-br-ext-box-resize {
   position: absolute;
   right: -1px;
   bottom: -1px;
@@ -266,32 +266,32 @@ body {
   height: 14px;
   cursor: se-resize;
 }
-.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-add-comments .ui-br-ext-box-resize svg,
+.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-report-bug .ui-br-ext-box-resize svg,
 .ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-select .ui-br-ext-box-resize svg,
-.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-messages .ui-br-ext-box-resize svg,
-.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-review .ui-br-ext-box-resize svg {
+.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-comments .ui-br-ext-box-resize svg,
+.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-view-bug .ui-br-ext-box-resize svg {
   height: 14px;
   width: 14px;
   transform: rotate(-45deg);
   fill: #707070;
 }
-.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-add-comments.ui-br-ext-active,
+.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-report-bug.ui-br-ext-active,
 .ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-select.ui-br-ext-active,
-.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-messages.ui-br-ext-active,
-.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-review.ui-br-ext-active {
+.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-comments.ui-br-ext-active,
+.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-view-bug.ui-br-ext-active {
   display: flex;
 }
-.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-messages {
+.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-comments {
   height: 300px;
 }
-.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-messages .ui-br-ext-send-message {
+.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-comments .ui-br-ext-send-message {
   display: flex;
 }
-.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-messages .ui-br-ext-send-message .ui-br-ext-form-container {
+.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-comments .ui-br-ext-send-message .ui-br-ext-form-container {
   flex-grow: 1;
   margin-bottom: 0;
 }
-.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-messages .ui-br-ext-send-message .ui-br-ext-btn {
+.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-comments .ui-br-ext-send-message .ui-br-ext-btn {
   margin: 0px 0px 0px 16px;
 }
 .ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-spinner {
@@ -317,7 +317,7 @@ body {
 .ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-spinner.ui-br-ext-spinner-on {
   display: inline-block;
 }
-.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-review {
+.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-view-bug {
   width: 350px;
 }
 .ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-dom-warning {
