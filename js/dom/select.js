@@ -200,6 +200,8 @@ function displayReportBugButton(enable){
 
     const reportBugButton = document.getElementById('ui-br-ext-report-bug-button');
 
-    reportBugButton.style.display = enable ? 'block' : 'none';    
+    reportBugButton.style.display = enable 
+    ? reportBugButton.classList.remove('ui-br-ext-report-bug-inactive') 
+    : reportBugButton.classList.add('ui-br-ext-report-bug-inactive');    
 
 }

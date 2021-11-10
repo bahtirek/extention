@@ -70,8 +70,22 @@ function resetAllOperators(){
  */
 function activateOperator(operatorId, operatorClassList){
 
-    // Resetting all operators before switching between operators.
-    resetAllOperators();
+    const currentActiveOperator = document.getElementsByClassName('ui-br-ext-active')[0]
+
+    /**
+     * Resetting all operators before switching between operators.
+     * The selected element should remain selected when the "Report bug" button is clicked.
+     */
+    if(currentActiveOperator?.id !== 'ui-br-ext-select-button'){
+        resetAllOperators();
+    }else if(currentActiveOperator?.id === 'ui-br-ext-select-button' 
+            && operatorId === 'ui-br-ext-select-button'){
+        resetAllOperators();
+    }else if(currentActiveOperator?.id === 'ui-br-ext-select-button' 
+            && operatorId !== 'ui-br-ext-report-bug-button'){
+        resetAllOperators();
+    }
+    
 
     if(setOperatorIconStyle(operatorId, operatorClassList)){
 

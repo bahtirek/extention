@@ -47,7 +47,7 @@ body {
         span {
             padding: 3px 2px;
             margin: 0 8px;
-            display: flex;
+            display: flex!important;
             position: relative;
 
             &:hover {
@@ -404,6 +404,14 @@ body {
     100% {-webkit-transform: rotate(360deg);}   
 }
 
-#ui-br-ext-report-bug-button{
-    display: none;
+.ui-br-ext-report-bug-inactive {
+    pointer-events: none!important;
+
+   * {
+        pointer-events: none!important;
+        color:  #a6a6a6;
+   }
 }
+
+
+
