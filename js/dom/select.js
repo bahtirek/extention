@@ -45,6 +45,13 @@ function onDeselect(){
         element.classList.remove('ui-br-ext-outlined-element');
     });
 
+    // Reset the global variable that holds the previously selected element properties.
+    if(ui_br_ext_previousElement){
+        ui_br_ext_previousElement.element = null,
+        ui_br_ext_previousElement.parentCount = 0
+    }
+
+
 }
 
 function addClickToBody(eventFunction){
@@ -76,7 +83,16 @@ function getMouseCoordinates(event){
     
 }
 
-let ui_br_ext_previousElement = null;
+// Global variable to hold previously clicked element properties.
+let ui_br_ext_previousElement = {
+
+    element : null,
+    parentCount : 0
+
+}
+
+// Global variable that defines how many parents are included on repeated click on the same element.
+const ui_br_ext_parentLimit = 5;
 
 function findElementFromPoint(pageX, pageY){
 
@@ -85,10 +101,14 @@ function findElementFromPoint(pageX, pageY){
 
     let element = document.elementFromPoint(pageX, pageY);
 
-    if(element && ui_br_ext_previousElement !== null){
+    const retainSelectedElement = document.elementFromPoint(pageX, pageY);
+
+    if(element 
+       && ui_br_ext_previousElement.element !== null
+       && ui_br_ext_previousElement.parentCount < ui_br_ext_parentLimit ){
 
         // Previously selected element's top and left coordicates.
-        const previousElementRect = ui_br_ext_previousElement.getBoundingClientRect();
+        const previousElementRect = ui_br_ext_previousElement.element.getBoundingClientRect();
         const previousElementTop = previousElementRect.top;
         const previousElementLeft = previousElementRect.left;
 
@@ -100,18 +120,38 @@ function findElementFromPoint(pageX, pageY){
         if(previousElementTop === elementTop && previousElementLeft === elementLeft){
 
             /**
-             * if selected element's parent is already outlined, then we outline the second parent.
-             * This goes up to 2 parents only.
+             * if selected element's parent is already outlined, then we outline the next parent (up to 5).
              */
-            element.parentElement.classList.contains('ui-br-ext-outlined-element')
-            ? element = element.parentElement.parentElement
-            : element = element.parentElement;
+            let parentElement = null;
+            let parentOutlined = false;
+
+            for(let i=1; i<ui_br_ext_parentLimit; i++){
+
+                parentElement = parentElement !== null
+                ? parentElement.parentElement
+                : element.parentElement;
+
+                if(parentElement.classList.contains('ui-br-ext-outlined-element')){
+                    parentOutlined = true;
+                    ui_br_ext_previousElement.parentCount ++;
+                    break;
+                }
+
+            }
+
+            if(!parentOutlined){
+                ui_br_ext_previousElement.parentCount ++;
+            }
+
+            element = parentOutlined
+            ? parentElement.parentElement
+            : element.parentElement;
 
         }
 
     }
 
-    ui_br_ext_previousElement = element;
+    ui_br_ext_previousElement.element = retainSelectedElement;
 
     if(
         element?.tagName.toLocaleLowerCase() != 'body'
@@ -124,6 +164,11 @@ function findElementFromPoint(pageX, pageY){
     }else{
       // Enabling the 'pointer-evenet: none' after locating the element under the pointer.
       onSelect();          
+    }
+
+    if(ui_br_ext_previousElement.parentCount === ui_br_ext_parentLimit){
+        ui_br_ext_previousElement.element = null,
+        ui_br_ext_previousElement.parentCount = 0
     }
 }
 
