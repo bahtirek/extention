@@ -76,12 +76,42 @@ function getMouseCoordinates(event){
     
 }
 
+let ui_br_ext_previousElement = null;
+
 function findElementFromPoint(pageX, pageY){
 
     // Temporarely removing 'pointer-evenet: none' style from head to find the element under pointer.
     document.getElementById('ui-br-ext-extention-style')?.remove();
 
-    const element = document.elementFromPoint(pageX, pageY);
+    let element = document.elementFromPoint(pageX, pageY);
+
+    if(element && ui_br_ext_previousElement !== null){
+
+        // Previously selected element's top and left coordicates.
+        const previousElementRect = ui_br_ext_previousElement.getBoundingClientRect();
+        const previousElementTop = previousElementRect.top;
+        const previousElementLeft = previousElementRect.left;
+
+        // Currently selected element's top and left coordicates.
+        const elementRect = element.getBoundingClientRect();
+        const elementTop = elementRect.top;
+        const elementLeft = elementRect.left;
+
+        if(previousElementTop === elementTop && previousElementLeft === elementLeft){
+
+            /**
+             * if selected element's parent is already outlined, then we outline the second parent.
+             * This goes up to 2 parents only.
+             */
+            element.parentElement.classList.contains('ui-br-ext-outlined-element')
+            ? element = element.parentElement.parentElement
+            : element = element.parentElement;
+
+        }
+
+    }
+
+    ui_br_ext_previousElement = element;
 
     if(
         element?.tagName.toLocaleLowerCase() != 'body'
