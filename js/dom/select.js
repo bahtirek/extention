@@ -51,6 +51,9 @@ function onDeselect(){
         ui_br_ext_previousElement.parentCount = 0
     }
 
+    // Disabling the "Report Bug" button if select operator is turned off.
+    displayReportBugButton(false);
+
 
 }
 
@@ -105,7 +108,8 @@ function findElementFromPoint(pageX, pageY){
 
     if(element 
        && ui_br_ext_previousElement.element !== null
-       && ui_br_ext_previousElement.parentCount < ui_br_ext_parentLimit ){
+       && ui_br_ext_previousElement.parentCount < ui_br_ext_parentLimit 
+       && element?.closest('#ui-br-ext-extention') === null){
 
         // Previously selected element's top and left coordicates.
         const previousElementRect = ui_br_ext_previousElement.element.getBoundingClientRect();
@@ -131,7 +135,7 @@ function findElementFromPoint(pageX, pageY){
                 ? parentElement.parentElement
                 : element.parentElement;
 
-                if(parentElement.classList.contains('ui-br-ext-outlined-element')){
+                if(parentElement?.classList.contains('ui-br-ext-outlined-element')){
                     parentOutlined = true;
                     ui_br_ext_previousElement.parentCount ++;
                     break;
@@ -155,12 +159,14 @@ function findElementFromPoint(pageX, pageY){
 
     if(
         element?.tagName.toLocaleLowerCase() != 'body'
+        && element?.tagName.toLocaleLowerCase() != 'html'
         && element?.closest('#ui-br-ext-extention') === null
         ){
             
             // Enabling the 'pointer-evenet: none' after locating the element under the pointer.
             onSelect();
             outlineSelectedElement(element);
+            displayReportBugButton(true);
     }else{
       // Enabling the 'pointer-evenet: none' after locating the element under the pointer.
       onSelect();          
@@ -184,5 +190,16 @@ function outlineSelectedElement(element){
     });
 
     element.classList.add('ui-br-ext-outlined-element');
+
+}
+/**
+ * 
+ * @param {boolean, true - enables a button, false - disbales a button} enable 
+ */
+function displayReportBugButton(enable){
+
+    const reportBugButton = document.getElementById('ui-br-ext-report-bug-button');
+
+    reportBugButton.style.display = enable ? 'block' : 'none';    
 
 }

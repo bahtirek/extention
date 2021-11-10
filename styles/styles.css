@@ -378,3 +378,6 @@ body {
     -webkit-transform: rotate(360deg);
   }
 }
+#ui-br-ext-report-bug-button {
+  display: none;
+}
