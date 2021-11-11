@@ -4,7 +4,7 @@
     "version": "1.0",
     "manifest_version": 2,
     "background": {
-        "service_worker": "js/background/background.js"
+        "service_worker": "background.js"
     },
     "content_scripts": [
         {
@@ -12,7 +12,7 @@
                 "<all_urls>"
             ],
             "js": [
-                "js/background/content.js",
+                "content.js",
                 "js/ui/extention-move.js",
                 "js/ui/extention-resize.js",
                 "js/common/helper-utils.js",
@@ -20,7 +20,11 @@
                 "js/dom/select.js",
                 "js/dom/jira-flow.js",
                 "js/dom/screenshot.js",
-                "js/ui/get-report.js"
+                "js/ui/get-report.js",
+                "js/export/pdf.js",
+                "js/3rdparty/html2canvas.min.js",
+                "js/3rdparty/pdfmake.min.js",
+                "js/3rdparty/vfs_fonts.js"
             ],
             "css": ["styles/styles.css"]
         }

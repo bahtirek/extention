@@ -110,6 +110,7 @@ function activateOperator(operatorId, operatorClassList){
 
             case 'ui-br-ext-export-button':
                 openDropdown('ui-br-ext-export');
+                savePdfBtnInit();
                 break;
 
             case 'ui-br-ext-settings-button':

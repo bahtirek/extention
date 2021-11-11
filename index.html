@@ -11,6 +11,9 @@
     <script src="js/common/helper-utils.js"></script>
     <script src="js/dom/jira-flow.js"></script>
     <script src="js/dom/screenshot.js"></script>
+    <script src="js/3rdparty/pdfmake.min.js"></script>
+    <script src="js/3rdparty/vfs_fonts.js"></script>
+    <script src="js/3rdparty/html2canvas.min.js"></script>
     <link rel="stylesheet" href="styles/styles.css">
     <title>Document</title>
 </head>
@@ -199,8 +202,8 @@
                     List of selections
                 </div>
                 <div class="ui-br-ext-btn-group">
-                    <button class="ui-br-ext-btn">PDF</button>
-                    <button class="ui-br-ext-btn">Word</button>
+                    <button class="ui-br-ext-btn" id="ui-br-ext-save-pdf">PDF</button>
+                    <button class="ui-br-ext-btn" id="ui-br-ext-save-word">Word</button>
                 </div>
                 
             </div>
@@ -229,7 +232,8 @@
         resizeExtention();
         moveExtention();
     </script>
-    <script src="js/ui/get-report.js"></script>
+    <script src="js/ui/get-report.js"></script>  
+    <script src="js/export/pdf.js"></script>
 </body>
 
 </html>
