@@ -2,8 +2,7 @@
 function savePdfBtnInit() {
 	document.getElementById('ui-br-ext-save-pdf').addEventListener('click', () => {
 		console.log('pdf click');
-		pages.content = [];
-		savePdf();
+		savePdf(false);
 	})
 }
 
@@ -65,16 +64,23 @@ async function preparePdfPage (report) {
 			content.push(body);
         }
 	}
-	let screenshot = await getScreenshot();
-	let image = {
-		image: screenshot,
-		width: 550
-	};
-	content.push(image)
+	if(report.saveScreenshot) {
+		if (!window.bugReportextention.screenshot) {
+			window.bugReportextention.screenshot = await getScreenshot();
+		} 
+		let image = {
+			image: window.bugReportextention.screenshot,
+			width: 550
+		};
+		content.push(image)
+	}
+	
 	return content;
 }
-async function savePdf() {
-	let page = await preparePdfPage(testReport)
+
+async function savePdf(report) {
+	let page = await preparePdfPage(report)
 	pages.content = pages.content.concat(page);
-	pdfMake.createPdf(pages).download();
+	await pdfMake.createPdf(pages).download();
+	pages.content = [];
 }

@@ -14,11 +14,14 @@ function getScreenshot (){
 }
 
 async function imageDownload(filename) {
-	const imageUrl = await getScreenshot();
+	if (!window.bugReportextention.screenshot) {
+		window.bugReportextention.screenshot = await getScreenshot();
+	}
+	
 	let dlLink = document.getElementById('ui-br-ext-download-image');
 	let MIME_TYPE = "image/png";
 	dlLink.download = filename;
-	dlLink.href = imageUrl;
+	dlLink.href = window.bugReportextention.screenshot;
 	dlLink.dataset.downloadurl = [MIME_TYPE, dlLink.download, dlLink.href].join(':');
 	dlLink.click();
 	dlLink.removeAttribute('data-downloadurl');
