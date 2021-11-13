@@ -97,7 +97,7 @@ function activateOperator(operatorId, operatorClassList){
 
             case 'ui-br-ext-report-bug-button':
                 openDropdown('ui-br-ext-report-bug');
-                saveButtonInit();
+                saveReportButtonInit();
                 break;
 
             case 'ui-br-ext-view-bug-button':

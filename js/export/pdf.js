@@ -2,10 +2,10 @@
 function savePdfBtnInit() {
 	document.getElementById('ui-br-ext-save-pdf').addEventListener('click', () => {
 		console.log('pdf click');
+		pages.content = [];
 		savePdf();
 	})
 }
-
 
 var pages = {
 	content: [],
@@ -65,8 +65,7 @@ async function preparePdfPage (report) {
 			content.push(body);
         }
 	}
-	let screenshot = await getScreenshot ();
-	console.log(screenshot);
+	let screenshot = await getScreenshot();
 	let image = {
 		image: screenshot,
 		width: 550
@@ -78,11 +77,4 @@ async function savePdf() {
 	let page = await preparePdfPage(testReport)
 	pages.content = pages.content.concat(page);
 	pdfMake.createPdf(pages).download();
-}
-
-function getScreenshot (){
-	return html2canvas(document.body).then(function(canvas) {
-		var dataUrl = canvas.toDataURL();
-		return dataUrl;
-	});
 }

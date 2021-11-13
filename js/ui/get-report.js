@@ -17,7 +17,7 @@ function NewReport () {
     this.screenshot = '';
 }
 
-function saveButtonInit() {
+function saveReportButtonInit() {
     setTimeout(function(){
         let saveButton = document.getElementById('ui-br-ext-save-report');
         console.log(saveButton.dataset['listener']);
@@ -32,7 +32,7 @@ async function startReport() {
     document.getElementsByClassName('ui-br-ext-spinner')[0].classList.add('ui-br-ext-spinner-on');
     const report = collectData();
     if (report.saveScreenshot) {
-        report.screenshot = await getScreenshot();
+        imageDownload('filename');
     }
     submitReport(report);
 }

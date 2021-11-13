@@ -19,10 +19,9 @@
                 "js/ui/mousedown.js",
                 "js/dom/select.js",
                 "js/dom/jira-flow.js",
-                "js/dom/screenshot.js",
                 "js/ui/get-report.js",
                 "js/export/pdf.js",
-                "js/3rdparty/html2canvas.min.js",
+                "js/export/screenshot.js",
                 "js/3rdparty/pdfmake.min.js",
                 "js/3rdparty/vfs_fonts.js"
             ],
@@ -33,7 +32,7 @@
         "extention.html",
         "assets/spinner.svg"
     ],
-    "permissions": ["storage"],
+    "permissions": ["storage", "activeTab", "declarativeContent"],
     "browser_action": {
         "default_icon": "assets/icon.png"
     }

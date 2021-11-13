@@ -38,6 +38,7 @@ function moveExtention() {
 } 
 
 function hideExtention() {
+    console.log('hide');
     document.getElementById('ui-br-ext-extention').style.display = 'none';
 }
 
