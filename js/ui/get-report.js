@@ -33,10 +33,11 @@ async function startReport() {
     document.getElementsByClassName('ui-br-ext-spinner')[0].classList.add('ui-br-ext-spinner-on');
     const report = collectData();
     if (report.saveScreenshot) {
-        window.bugReportextention.screenshot = await getScreenshot();
+        report.screenshot = await getScreenshot();
+        window.bugReportextention.screenshot = report.screenshot;
         // don't download image if save as pdf
         // image will be saved in pdf
-        if(!report.savePdf) {
+        if(report.saveJira || !report.savePdf) {
             imageDownload('filename');
         }
     }
@@ -57,6 +58,7 @@ function collectData(){
 
 async function submitReport(report) {
     console.log(report);
+    bugReportextention.reports.push(report)
     /* let response = await fetch('url/api', {
         method: 'POST',
         headers: {
@@ -74,6 +76,6 @@ async function submitReport(report) {
         createJira();
     }
     if (report.savePdf) {
-        savePdf(report); 
+        savePdf(bugReportextention.reports.length - 1); 
     }
 }

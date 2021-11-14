@@ -1,5 +1,8 @@
 
-window.bugReportextention = {};
+window.bugReportextention = {
+    screenshot: '',
+    reports: [],
+};
 
 
 function moveExtention() {
