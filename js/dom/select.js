@@ -1,5 +1,5 @@
 function onSelect(){
-
+console.log('on select');
     const noPointerEvent = 'body *{pointer-events: none; }';
     const noHighlight = `*{
         -webkit-tap-highlight-color: transparent;

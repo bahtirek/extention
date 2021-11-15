@@ -1,9 +1,4 @@
 
-window.bugReportextention = {
-    screenshot: '',
-    reports: [],
-};
-
 
 function moveExtention() {
     let extention = document.getElementById('ui-br-ext-extention');

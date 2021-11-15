@@ -33,8 +33,14 @@ async function startReport() {
     document.getElementsByClassName('ui-br-ext-spinner')[0].classList.add('ui-br-ext-spinner-on');
     const report = collectData();
     if (report.saveScreenshot) {
-        report.screenshot = await getScreenshot();
-        window.bugReportextention.screenshot = report.screenshot;
+        
+        if(!window.bugReportextention.dynamicDomFlow) {
+            report.screenshot = await getScreenshot();
+            window.bugReportextention.screenshot = report.screenshot;
+        } else {
+            report.screenshot = window.bugReportextention.screenshot;
+        }
+        
         // don't download image if save as pdf
         // image will be saved in pdf
         if(report.saveJira || !report.savePdf) {

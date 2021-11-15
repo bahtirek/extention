@@ -33,6 +33,22 @@
         "assets/spinner.svg"
     ],
     "permissions": ["storage", "activeTab", "declarativeContent"],
+    "commands": {
+        "trigger_select": {
+          "suggested_key": {
+            "default": "Ctrl+Shift+S",
+            "mac": "Command+Shift+S"
+          },
+          "description": "Hot Key for Selection"
+        },
+        "get_screenshot": {
+          "suggested_key": {
+            "default": "Ctrl+Shift+U",
+            "mac": "Command+Shift+U"
+          },
+          "description": "Hot Key for Screenshot"
+        }
+    },
     "browser_action": {
         "default_icon": "assets/icon.png"
     }

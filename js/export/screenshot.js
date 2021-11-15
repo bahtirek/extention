@@ -13,6 +13,8 @@ function getScreenshot (){
 	})
 }
 
+
+
 async function imageDownload(filename) {
 	if (!window.bugReportextention.screenshot) {
 		window.bugReportextention.screenshot = await getScreenshot();
