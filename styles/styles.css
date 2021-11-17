@@ -147,6 +147,7 @@ body {
 .ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-dropdown-item .ui-br-ext-form-container.ui-br-ext-textarea input[type=text],
 .ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-dropdown-item .ui-br-ext-form-container.ui-br-ext-text textarea,
 .ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-dropdown-item .ui-br-ext-form-container.ui-br-ext-textarea textarea {
+  font-family: arial;
   width: 100%;
   padding: 6px 14px;
   border: 1px solid #c4c8c9;

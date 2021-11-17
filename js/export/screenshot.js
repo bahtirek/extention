@@ -1,5 +1,6 @@
-function getScreenshot (){
+async function getScreenshot (){
 	document.getElementById('ui-br-ext-extention').style.display = 'none';
+	await setDelay(100);
 	return new Promise((resolve, reject)=> {
 		chrome.runtime.sendMessage({todo: "getImage"}, response => {
 			if(response.imgSrc) {
@@ -13,7 +14,13 @@ function getScreenshot (){
 	})
 }
 
-
+function setDelay(timeout){
+	return new Promise((resolve) => {
+		setTimeout(() => {
+			resolve();
+		}, timeout);
+	})
+}
 
 async function imageDownload(filename) {
 	if (!window.bugReportextention.screenshot) {
@@ -26,5 +33,5 @@ async function imageDownload(filename) {
 	dlLink.href = window.bugReportextention.screenshot;
 	dlLink.dataset.downloadurl = [MIME_TYPE, dlLink.download, dlLink.href].join(':');
 	dlLink.click();
-	dlLink.removeAttribute('data-downloadurl');
+	dlLink.href = "";
 }

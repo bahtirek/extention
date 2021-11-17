@@ -33,11 +33,12 @@ async function startReport() {
     document.getElementsByClassName('ui-br-ext-spinner')[0].classList.add('ui-br-ext-spinner-on');
     const report = collectData();
     if (report.saveScreenshot) {
-        
+        //If not dynamicFlow(hot keys used) get new screenshot 
         if(!window.bugReportextention.dynamicDomFlow) {
             report.screenshot = await getScreenshot();
             window.bugReportextention.screenshot = report.screenshot;
         } else {
+            //If dynamicFlow(hot keys used) get screenshot from memory
             report.screenshot = window.bugReportextention.screenshot;
         }
         
