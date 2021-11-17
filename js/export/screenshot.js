@@ -33,5 +33,4 @@ async function imageDownload(filename) {
 	dlLink.href = window.bugReportextention.screenshot;
 	dlLink.dataset.downloadurl = [MIME_TYPE, dlLink.download, dlLink.href].join(':');
 	dlLink.click();
-	dlLink.href = "";
 }
