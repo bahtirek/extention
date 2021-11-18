@@ -8,7 +8,6 @@ function setButtonListeners(){
         operator.addEventListener('click', function () {
             activateOperator(operator.id, operator.classList)
         })
-
     });
 }
 
@@ -116,6 +115,7 @@ function activateOperator(operatorId, operatorClassList){
             case 'ui-br-ext-settings-button':
                 openDropdown('ui-br-ext-settings');
                 initListeners(listeners);
+                setProjectOptions();
                 break;
 
             case 'ui-br-ext-close-button':
