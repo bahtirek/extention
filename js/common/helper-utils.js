@@ -115,6 +115,7 @@ function activateOperator(operatorId, operatorClassList){
 
             case 'ui-br-ext-settings-button':
                 openDropdown('ui-br-ext-settings');
+                initListeners(listeners);
                 break;
 
             case 'ui-br-ext-close-button':
@@ -137,5 +138,32 @@ function closeDropdown() {
 
         operator.classList.remove('ui-br-ext-active');
 
+    });
+}
+
+function toggleElement(id) {
+    let element = document.getElementById(id);
+    if (element.style.display == 'block') {
+        element.style.display = 'none';
+    } else {
+        element.style.display = 'block';
+    }
+}
+function toggleButtonSpinner(id, action) {
+    let element = document.getElementById(id);
+    let classList = element.getElementsByClassName('ui-br-ext-spinner')[0].classList;
+
+    if (action == 'off') {
+        classList.remove('ui-br-ext-spinner-on')
+    } else {
+        classList.add('ui-br-ext-spinner-on')
+    }
+}
+
+function initListeners(listeners){
+    listeners.forEach(listener => {
+        document.getElementById(listener.id).addEventListener(listener.type, function(){
+            listener.callback(listener.parameter)
+        });
     });
 }
