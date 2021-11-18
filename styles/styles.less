@@ -1,5 +1,6 @@
 @primary-color: #00ad55;
-@extensionId : ~"__MSG_@@extension_id__";
+@extensionId :~"__MSG_@@extension_id__";
+
 body {
     pointer-events: 'all!important';
 }
@@ -47,7 +48,7 @@ body {
         span {
             padding: 3px 2px;
             margin: 0 8px;
-            display: flex!important;
+            display: flex !important;
             position: relative;
 
             &:hover {
@@ -135,6 +136,33 @@ body {
                 display: block;
             }
 
+            .ui-br-ext-btn-link {
+                margin-bottom: 20px;
+                text-align: right;
+
+                span {
+                    font-size: 14px;
+                    font-weight: bold;
+                    color: @primary-color;
+                    cursor: pointer;
+
+                    &::before {
+                        content: "+";
+                        height: 14px;
+                        width: 14px;
+                        border-radius: 50%;
+                        padding: 0px 4px;
+                        border: 1px solid @primary-color;
+                        margin-right: 3px;
+                    }
+                }
+            }
+
+            #ui-br-ext-new-project-cont {
+                padding-bottom: 30px;
+                display: none;
+            }
+
             .ui-br-ext-form-container {
                 display: flex;
                 flex-wrap: wrap;
@@ -170,6 +198,7 @@ body {
                     margin-bottom: 16px;
 
                     input[type=text],
+                    select,
                     textarea {
                         font-family: arial;
                         width: 100%;
@@ -177,7 +206,8 @@ body {
                         border: 1px solid #c4c8c9;
                         border-radius: 4px;
                         white-space: pre-wrap;
-                        
+                        box-sizing: border-box;
+
                         &:focus-visible {
                             outline: none;
                         }
@@ -199,6 +229,18 @@ body {
                     }
                 }
 
+                .ui-br-ext-message {
+                    font-size: 10px;
+                    display: none;
+                    max-width: 250px;
+                    position: absolute;
+                    bottom: -13px;
+                    left: 2px;
+                }
+                .ui-br-ext-error + .ui-br-ext-message {
+                    display: block;
+                    color: red;
+                }
             }
 
             .ui-br-ext-btn {
@@ -300,13 +342,15 @@ body {
 
         .ui-br-ext-comments {
             height: 300px;
-            
+
             .ui-br-ext-send-message {
                 display: flex;
+
                 .ui-br-ext-form-container {
                     flex-grow: 1;
                     margin-bottom: 0;
                 }
+
                 .ui-br-ext-btn {
                     margin: 0px 0px 0px 16px;
                 }
@@ -334,6 +378,7 @@ body {
                 width: 20px;
                 -webkit-animation: spin 1s infinite linear;
             }
+
             &.ui-br-ext-spinner-on {
                 display: inline-block;
             }
@@ -342,17 +387,21 @@ body {
         .ui-br-ext-view-bug {
             width: 350px;
         }
+
         .ui-br-ext-dom-warning {
             color: red;
             width: 350px;
-            p{
+
+            p {
                 background-color: cornsilk;
-                margin: 0% ;
+                margin: 0%;
                 padding: 16px;
+
                 span:not(.ui-br-ext-spinner) {
                     font-size: 14px;
                 }
             }
+
             .ui-br-ext-spinner {
                 width: 35px;
             }
@@ -364,11 +413,12 @@ body {
     }
 
     .messages {
-        .message{
+        .message {
             padding: 16px 10px 10px;
             border: 1px solid #c5dfc5;
             border-radius: 3px;
             position: relative;
+
             //background-color: #b0f7b03b;
             .message-header {
                 display: flex;
@@ -378,6 +428,7 @@ body {
                 left: 5px;
                 background-color: white;
                 padding: 0 5px;
+
                 .initials {
                     background: tomato;
                     color: white;
@@ -388,12 +439,14 @@ body {
                     margin-right: 10px;
                     font-size: 14px;
                 }
+
                 .message-date {
                     font-size: 10px;
                     color: #666666;
                 }
             }
         }
+
         .message-body {
             font-size: 14px;
         }
@@ -401,18 +454,20 @@ body {
 }
 
 @-webkit-keyframes spin {
-    0%  {-webkit-transform: rotate(0deg);}
-    100% {-webkit-transform: rotate(360deg);}   
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
 }
 
 .ui-br-ext-report-bug-inactive {
-    pointer-events: none!important;
+    pointer-events: none !important;
 
-   * {
-        pointer-events: none!important;
-        color:  #a6a6a6;
-   }
+    * {
+        pointer-events: none !important;
+        color: #a6a6a6;
+    }
 }
-
-
-

@@ -40,7 +40,7 @@ body {
 .ui-br-ext-extention .ui-br-ext-menu-container span {
   padding: 3px 2px;
   margin: 0 8px;
-  display: flex!important;
+  display: flex !important;
   position: relative;
 }
 .ui-br-ext-extention .ui-br-ext-menu-container span:hover {
@@ -113,6 +113,29 @@ body {
 .ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-dropdown-item.ui-br-ext-active {
   display: block;
 }
+.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-dropdown-item .ui-br-ext-btn-link {
+  margin-bottom: 20px;
+  text-align: right;
+}
+.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-dropdown-item .ui-br-ext-btn-link span {
+  font-size: 14px;
+  font-weight: bold;
+  color: #00ad55;
+  cursor: pointer;
+}
+.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-dropdown-item .ui-br-ext-btn-link span::before {
+  content: "+";
+  height: 14px;
+  width: 14px;
+  border-radius: 50%;
+  padding: 0px 4px;
+  border: 1px solid #00ad55;
+  margin-right: 3px;
+}
+.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-dropdown-item #ui-br-ext-new-project-cont {
+  padding-bottom: 30px;
+  display: none;
+}
 .ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-dropdown-item .ui-br-ext-form-container {
   display: flex;
   flex-wrap: wrap;
@@ -145,6 +168,8 @@ body {
 }
 .ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-dropdown-item .ui-br-ext-form-container.ui-br-ext-text input[type=text],
 .ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-dropdown-item .ui-br-ext-form-container.ui-br-ext-textarea input[type=text],
+.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-dropdown-item .ui-br-ext-form-container.ui-br-ext-text select,
+.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-dropdown-item .ui-br-ext-form-container.ui-br-ext-textarea select,
 .ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-dropdown-item .ui-br-ext-form-container.ui-br-ext-text textarea,
 .ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-dropdown-item .ui-br-ext-form-container.ui-br-ext-textarea textarea {
   font-family: arial;
@@ -153,19 +178,26 @@ body {
   border: 1px solid #c4c8c9;
   border-radius: 4px;
   white-space: pre-wrap;
+  box-sizing: border-box;
 }
 .ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-dropdown-item .ui-br-ext-form-container.ui-br-ext-text input[type=text]:focus-visible,
 .ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-dropdown-item .ui-br-ext-form-container.ui-br-ext-textarea input[type=text]:focus-visible,
+.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-dropdown-item .ui-br-ext-form-container.ui-br-ext-text select:focus-visible,
+.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-dropdown-item .ui-br-ext-form-container.ui-br-ext-textarea select:focus-visible,
 .ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-dropdown-item .ui-br-ext-form-container.ui-br-ext-text textarea:focus-visible,
 .ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-dropdown-item .ui-br-ext-form-container.ui-br-ext-textarea textarea:focus-visible {
   outline: none;
 }
 .ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-dropdown-item .ui-br-ext-form-container.ui-br-ext-text input[type=text]:focus,
 .ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-dropdown-item .ui-br-ext-form-container.ui-br-ext-textarea input[type=text]:focus,
+.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-dropdown-item .ui-br-ext-form-container.ui-br-ext-text select:focus,
+.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-dropdown-item .ui-br-ext-form-container.ui-br-ext-textarea select:focus,
 .ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-dropdown-item .ui-br-ext-form-container.ui-br-ext-text textarea:focus,
 .ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-dropdown-item .ui-br-ext-form-container.ui-br-ext-textarea textarea:focus,
 .ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-dropdown-item .ui-br-ext-form-container.ui-br-ext-text input[type=text]:active,
 .ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-dropdown-item .ui-br-ext-form-container.ui-br-ext-textarea input[type=text]:active,
+.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-dropdown-item .ui-br-ext-form-container.ui-br-ext-text select:active,
+.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-dropdown-item .ui-br-ext-form-container.ui-br-ext-textarea select:active,
 .ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-dropdown-item .ui-br-ext-form-container.ui-br-ext-text textarea:active,
 .ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-dropdown-item .ui-br-ext-form-container.ui-br-ext-textarea textarea:active {
   border-color: #00ad55;
@@ -179,6 +211,18 @@ body {
   background-color: #ffffff;
   font-size: 11px;
   font-weight: normal !important;
+}
+.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-dropdown-item .ui-br-ext-form-container .ui-br-ext-message {
+  font-size: 10px;
+  display: none;
+  max-width: 250px;
+  position: absolute;
+  bottom: -13px;
+  left: 2px;
+}
+.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-dropdown-item .ui-br-ext-form-container .ui-br-ext-error + .ui-br-ext-message {
+  display: block;
+  color: red;
 }
 .ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-dropdown-item .ui-br-ext-btn {
   font-size: 14px !important;
@@ -327,7 +371,7 @@ body {
 }
 .ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-dom-warning p {
   background-color: cornsilk;
-  margin: 0% ;
+  margin: 0%;
   padding: 16px;
 }
 .ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-dom-warning p span:not(.ui-br-ext-spinner) {
@@ -380,9 +424,9 @@ body {
   }
 }
 .ui-br-ext-report-bug-inactive {
-  pointer-events: none!important;
+  pointer-events: none !important;
 }
 .ui-br-ext-report-bug-inactive * {
-  pointer-events: none!important;
+  pointer-events: none !important;
   color: #a6a6a6;
 }

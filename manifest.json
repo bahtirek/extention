@@ -13,9 +13,10 @@
             ],
             "js": [
                 "content.js",
+                "js/common/helper-utils.js",
                 "js/ui/extention-move.js",
                 "js/ui/extention-resize.js",
-                "js/common/helper-utils.js",
+                "js/ui/settings.js",
                 "js/ui/mousedown.js",
                 "js/dom/select.js",
                 "js/dom/jira-flow.js",

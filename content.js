@@ -22,11 +22,7 @@ async function gotMessage(message, sender, sendResponse) {
             });
         } else {
             //if extension injected then check and toggle visibility
-            if (extention.style.display == 'block') {
-                extention.style.display = 'none';
-            } else {
-                extention.style.display = 'block';
-            }
+            toggleElement('ui-br-ext-extention');
         }
     } 
     //Cntr-Shift-S
