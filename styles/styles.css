@@ -179,6 +179,8 @@ body {
   border-radius: 4px;
   white-space: pre-wrap;
   box-sizing: border-box;
+  font-size: 14px!important;
+  color: #404040 !important;
 }
 .ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-dropdown-item .ui-br-ext-form-container.ui-br-ext-text input[type=text]:focus-visible,
 .ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-dropdown-item .ui-br-ext-form-container.ui-br-ext-textarea input[type=text]:focus-visible,
@@ -219,8 +221,6 @@ body {
   position: absolute;
   bottom: -13px;
   left: 2px;
-}
-.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-dropdown-item .ui-br-ext-form-container .ui-br-ext-error + .ui-br-ext-message {
   display: block;
   color: red;
 }
@@ -414,6 +414,12 @@ body {
 }
 .ui-br-ext-extention .messages .message-body {
   font-size: 14px;
+}
+.ui-br-ext-extention ul {
+  list-style-type: none;
+  padding: 0 0 0 10px;
+  margin: 0 0 30px 0;
+  color: #404040;
 }
 @-webkit-keyframes spin {
   0% {

@@ -42,6 +42,14 @@ async function preparePdfPage(report) {
 	}
 	let content = [];
 
+	if(window.bugReportextention.currentProject.label) {
+		let project = {
+			text: `Project:  ${window.bugReportextention.currentProject.label}`,
+			style: 'description'
+		}
+		content.push(project);
+	}
+
 	for (const item of list) {
 		if (report[item].length > 0) {
 

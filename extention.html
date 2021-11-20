@@ -63,6 +63,12 @@
         <div class="ui-br-ext-dropdown-item ui-br-ext-report-bug" id="ui-br-ext-report-bug">
             <div class="ui-br-ext-drop-title">Report bug</div>
             <div class="ui-br-ext-drop-body">
+                <ul>
+                    <li>
+                        <span>Project:</span>
+                        <span id="ui-br-ext-project-name">No project choosen</span>
+                    </li>
+                </ul>
                 <div class="ui-br-ext-form-container ui-br-ext-textarea">
                     <label for="ui-br-ext-description">Description</label>
                     <textarea name="ui-br-ext-description" id="ui-br-ext-description" rows="2" onclick="select()" data-gramm="false"></textarea>
@@ -200,7 +206,7 @@
                     <div class="ui-br-ext-form-container ui-br-ext-textarea">
                         <label for="ui-br-ext-new-project">Project label</label>
                         <input type="text" name="ui-br-ext-new-project" id="ui-br-ext-new-project"/>
-                        <span class="ui-br-ext-message">Sorry something went wrong. Please try again later</span>
+                        <span class="ui-br-ext-message"></span>
                     </div>
                     <button class="ui-br-ext-btn" id="ui-br-ext-save-new-project" data-listener="off">
                         <span class="ui-br-ext-spinner"></span>

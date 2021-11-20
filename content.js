@@ -3,7 +3,8 @@ window.bugReportextention = {
     screenshot: '',
     reports: [],
     dynamicDomFlow: false,
-    currentProject: ''
+    currentProject: {},
+    projects: []
 };
 
 chrome.runtime.onMessage.addListener(gotMessage);
