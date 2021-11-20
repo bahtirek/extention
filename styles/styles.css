@@ -1,6 +1,9 @@
 body {
   pointer-events: 'all!important';
 }
+* {
+  font-family: arial!important;
+}
 .ui-br-ext-extention {
   position: fixed;
   left: 50%;
@@ -135,6 +138,9 @@ body {
 .ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-dropdown-item #ui-br-ext-new-project-cont {
   padding-bottom: 30px;
   display: none;
+}
+.ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-dropdown-item #ui-br-ext-new-project-cont .ui-br-ext-form-container.ui-br-ext-textarea {
+  margin-bottom: 30px;
 }
 .ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-dropdown-item .ui-br-ext-form-container {
   display: flex;

@@ -142,6 +142,7 @@ function closeDropdown() {
 }
 
 function toggleElement(id) {
+    console.log(id);
     let element = document.getElementById(id);
     if (element.style.display == 'block') {
         element.style.display = 'none';
