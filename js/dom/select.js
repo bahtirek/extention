@@ -167,6 +167,7 @@ function findElementFromPoint(pageX, pageY){
             onSelect();
             outlineSelectedElement(element);
             displayReportBugButton(true);
+            window.bugReportextention.selectedElement = element;
     }else{
       // Enabling the 'pointer-evenet: none' after locating the element under the pointer.
       onSelect();          

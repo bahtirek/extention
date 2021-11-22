@@ -4,7 +4,8 @@ window.bugReportextention = {
     reports: [],
     dynamicDomFlow: false,
     currentProject: {},
-    projects: []
+    projects: [],
+    selectedElement: ''
 };
 
 chrome.runtime.onMessage.addListener(gotMessage);

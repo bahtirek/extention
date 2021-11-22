@@ -69,17 +69,36 @@ async function preparePdfPage(report) {
 	}
 
 	if (report.saveScreenshot) {
+		let rect = window.bugReportextention.selectedElement.getBoundingClientRect();
+		let width = 550;
+
 		if (!report.screenshot) {
 			report.screenshot = await getScreenshot();
 		}
-		let image = {
+
+		await cropImage();
+		report.croppedScreenshot = window.bugReportextention.croppedScreenshot;
+
+		if ( rect.width < 550 ) {
+			width = rect.width + 30;
+		} else {
+			width = 550;
+		}
+		let croppedImage = {
+			image: report.croppedScreenshot,
+			width: width,
+			style: 'screenshot'
+		};
+
+		let screenshot = {
 			image: report.screenshot,
 			width: 550,
 			pageBreak: 'after',
 			style: 'screenshot'
-
 		};
-		content.push(image)
+
+		content.push(croppedImage);
+		content.push(screenshot)
 	}
 
 	return content;
