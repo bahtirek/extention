@@ -5,7 +5,6 @@ async function getScreenshot (){
 		chrome.runtime.sendMessage({todo: "getImage"}, response => {
 			if(response.imgSrc) {
 				resolve(response.imgSrc);
-				//cropImage(response.imgSrc);
 				document.getElementById('ui-br-ext-extention').style.display = 'block';	
 			} else {
 				reject();
@@ -27,10 +26,10 @@ async function imageDownload(filename) {
 	if (!window.bugReportextention.screenshot) {
 		window.bugReportextention.screenshot = await getScreenshot();
 	}
-	screenshotLink('ui-br-ext-download-image-full', window.bugReportextention.screenshot);
+	screenshotLink('ui-br-ext-download-image-full', window.bugReportextention.screenshot, 'full_screenshot');
 	await cropImage();
-	screenshotLink2('ui-br-ext-download-image-cropped', window.bugReportextention.croppedScreenshot);
-	console.log(window.bugReportextention.croppedScreenshot);
+	await setDelay(1000);
+	screenshotLink('ui-br-ext-download-image-cropped', window.bugReportextention.croppedScreenshot, 'cropped_screenshot');
 }
 
 function screenshotLink(id, dataUrl, filename) {
@@ -40,15 +39,6 @@ function screenshotLink(id, dataUrl, filename) {
 	dlLink.href = dataUrl;
 	dlLink.dataset.downloadurl = [MIME_TYPE, dlLink.download, dlLink.href].join(':');
 	dlLink.click();
-}
-
-function screenshotLink2(id, dataUrl, filename) {
-	let dlLink2 = document.getElementById(id);
-	let MIME_TYPE = "image/png";
-	dlLink2.download = filename;
-	dlLink2.href = dataUrl;
-	dlLink2.dataset.downloadurl = [MIME_TYPE, dlLink2.download, dlLink2.href].join(':');
-	dlLink2.click();
 }
 
 async function cropImage() {
@@ -63,8 +53,5 @@ async function cropImage() {
 	await new Promise(r => img.onload=r, img.src=dataUrl);
 	ctx.drawImage(img, rect.left-10, rect.top-10, rect.width+20, rect.height+20, 5, 5, rect.width+20, rect.height+20);
 	window.bugReportextention.croppedScreenshot = canvas.toDataURL("image/png");
-	console.log(canvas.toDataURL("image/png"));
-	console.log(window.bugReportextention.croppedScreenshot);
-	console.log(window.bugReportextention.screenshot);
 }
 
