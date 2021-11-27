@@ -20,6 +20,7 @@
                 "js/ui/mousedown.js",
                 "js/dom/select.js",
                 "js/dom/jira-flow.js",
+                "js/dom/hover-outline.js",
                 "js/ui/get-report.js",
                 "js/export/pdf.js",
                 "js/export/screenshot.js",

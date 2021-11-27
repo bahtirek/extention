@@ -1,36 +1,5 @@
 function onSelect(){
-console.log('on select');
-    const noPointerEvent = 'body *{pointer-events: none; }';
-    const noHighlight = `*{
-        -webkit-tap-highlight-color: transparent;
-        -webkit-touch-callout: none;
-        -webkit-user-select: none;
-        -khtml-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-      }`;
-
-    const outlineSelectedElement = `.ui-br-ext-outlined-element{ 
-        outline: 3px dashed!important;
-        outline-color: red!important; 
-      }`
-
-    const head = document.head || document.getElementsByTagName('head')[0];
-
-    const style = document.createElement('style');
-
-    style.setAttribute('id','ui-br-ext-extention-style');    
-
-    head.appendChild(style);
-
-    style.type = 'text/css';
-    if (style.styleSheet){
-        style.styleSheet.cssText = noPointerEvent+noHighlight;
-    } else {
-        style.appendChild(document.createTextNode(noPointerEvent+noHighlight+outlineSelectedElement));
-    }
-
+    console.log('on select');
     addClickToBody(getMouseCoordinates);
 }
 
@@ -59,17 +28,25 @@ function onDeselect(){
 
 function addClickToBody(eventFunction){
 
-    const body = document.getElementsByTagName('html')[0];
+    const html = document.getElementsByTagName('html')[0];
 
-    body.addEventListener('mousedown', eventFunction, true);
+    html.addEventListener('mousedown', eventFunction, true);
+
+    addClickBlocker();
+
+    addHover();
 
 }
 
 function removeClickFromBody(eventFunction){
 
-    const body = document.getElementsByTagName('html')[0];
+    const html = document.getElementsByTagName('html')[0];
 
-    body.removeEventListener('mousedown', eventFunction, true);
+    html.removeEventListener('mousedown', eventFunction, true);
+
+    removeClickBlocker();
+
+    removeHover();
 
 }
 
@@ -168,6 +145,8 @@ function findElementFromPoint(pageX, pageY){
             outlineSelectedElement(element);
             displayReportBugButton(true);
             window.bugReportextention.selectedElement = element;
+            //Used to crop dynamic elements
+            window.bugReportextention.selectedElementRect = element.getBoundingClientRect();
     }else{
       // Enabling the 'pointer-evenet: none' after locating the element under the pointer.
       onSelect();          
@@ -185,12 +164,16 @@ function findElementFromPoint(pageX, pageY){
  */
 function outlineSelectedElement(element){
 
+
     // Remove outline from any previously selected elements.
     document.querySelectorAll('.ui-br-ext-outlined-element').forEach(element => {
         element.classList.remove('ui-br-ext-outlined-element');
+        element.style.cssText = window.bugReportextention.currentElementInlineStyle;
     });
 
     element.classList.add('ui-br-ext-outlined-element');
+    window.bugReportextention.currentElementInlineStyle = element.style.cssText;
+    element.style.cssText = window.bugReportextention.currentElementInlineStyle + "outline: 3px dashed!important; outline-color: red!important; ";
 
 }
 /**
@@ -206,3 +189,5 @@ function displayReportBugButton(enable){
     : reportBugButton.classList.add('ui-br-ext-report-bug-inactive');    
 
 }
+
+

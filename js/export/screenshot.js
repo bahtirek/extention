@@ -1,14 +1,17 @@
 async function getScreenshot (){
 	document.getElementById('ui-br-ext-extention').style.display = 'none';
+	document.querySelector('body').classList.add('ui-br-ext-hide-hovered');
 	await setDelay(100);
 	return new Promise((resolve, reject)=> {
 		chrome.runtime.sendMessage({todo: "getImage"}, response => {
 			if(response.imgSrc) {
 				resolve(response.imgSrc);
 				document.getElementById('ui-br-ext-extention').style.display = 'block';	
+				document.querySelector('body').classList.remove('ui-br-ext-hide-hovered');
 			} else {
 				reject();
 				document.getElementById('ui-br-ext-extention').style.display = 'block';
+				document.querySelector('body').classList.remove('ui-br-ext-hide-hovered');
 			}
 		});
 	})
@@ -43,7 +46,7 @@ function screenshotLink(id, dataUrl, filename) {
 
 async function cropImage() {
 	let img = new Image();
-	let rect = window.bugReportextention.selectedElement.getBoundingClientRect();
+	let rect = window.bugReportextention.selectedElementRect;
 	let dataUrl = window.bugReportextention.screenshot;
 	let canvas = document.getElementById('ui-br-ext-canvas');
 	let ctx = canvas.getContext('2d');

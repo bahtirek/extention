@@ -5,7 +5,9 @@ window.bugReportextention = {
     dynamicDomFlow: false,
     currentProject: {},
     projects: [],
-    selectedElement: ''
+    selectedElement: '',
+    selectedElementRect: '',
+    currentElementInlineStyle: ''
 };
 
 chrome.runtime.onMessage.addListener(gotMessage);
@@ -46,4 +48,28 @@ async function gotMessage(message, sender, sendResponse) {
     return true;
 }
 
+
+/* const bodyChildren = document.querySelectorAll('body > *:not(#ui-br-ext-extention):not(script):not(noscript):not(style)');
+
+const preventClick = (event) => preventClickHandler(event);
+
+function addClickListener() {
+    bodyChildren.forEach(el => {
+        el.addEventListener('click', preventClick, {capture: true});
+    });
+}
+
+function removeClickListener() {
+    bodyChildren.forEach(el => {
+        el.removeEventListener('click', preventClick, {capture: true});
+    });
+}
+
+
+function preventClickHandler(event) {
+    event.preventDefault();
+    event.stopImmediatePropagation();
+    event.stopPropagation();
+    return false;
+} */
 

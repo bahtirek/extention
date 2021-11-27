@@ -9,6 +9,7 @@
     <script src="js/ui/extention-move.js"></script>
     <script src="js/ui/extention-resize.js"></script>
     <script src="js/dom/select.js"></script>
+    <script src="js/dom/hover-outline.js"></script>
     <script src="js/common/helper-utils.js"></script>
     <script src="js/ui/settings.js"></script>
     <script src="js/dom/jira-flow.js"></script>
@@ -20,9 +21,9 @@
     <title>Document</title>
 </head>
 
-<body>
-    <div class="ui-br-ext-extention ui-br-ext-alwaysOn" id="ui-br-ext-extention">
-        <div class="ui-br-ext-header" id="ui-br-ext-header">
+<body class="">
+    <div class="ui-br-ext-extention ui-br-ext-alwaysOn" id="ui-br-ext-extention" style="outline: none !important;">
+        <div class="ui-br-ext-header" id="ui-br-ext-header"  style="outline: none !important;">
             <div class="ui-br-ext-menu-container ui-br-ext-container ui-br-ext-alwaysOn">
                 <span class="ui-br-ext-operator ui-br-ext-alwaysOn" data-title="Select" id="ui-br-ext-select-button">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -268,7 +269,10 @@
         <canvas id="ui-br-ext-canvas" style="display: none;"></canvas>
     </div>
 
-    <button>
+    <button style="color: blue;">
+        TEST
+    </button>
+    <button style="color: green;">
         TEST
     </button>
     <script>

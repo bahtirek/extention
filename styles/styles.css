@@ -1,8 +1,22 @@
 body {
   pointer-events: 'all!important';
 }
+body .ui-br-ext-hovered {
+  outline: 1px dashed!important;
+  outline-color: red!important;
+}
+body.ui-br-ext-hide-hovered .ui-br-ext-hovered {
+  outline: none!important;
+}
 * {
   font-family: arial!important;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 .ui-br-ext-extention {
   position: fixed;
@@ -25,8 +39,14 @@ body {
 .ui-br-ext-extention.ui-br-ext-moving {
   opacity: 0.8;
 }
+.ui-br-ext-extention.ui-br-ext-hovered {
+  outline: none!important;
+}
 .ui-br-ext-extention * {
   pointer-events: initial !important;
+}
+.ui-br-ext-extention * .ui-br-ext-hovered {
+  outline: none!important;
 }
 .ui-br-ext-extention .ui-br-ext-header {
   padding: 10px 10px 0px;
