@@ -1,22 +1,9 @@
-body {
-  pointer-events: 'all!important';
-}
 body .ui-br-ext-hovered {
   outline: 1px dashed!important;
   outline-color: red!important;
 }
 body.ui-br-ext-hide-hovered .ui-br-ext-hovered {
   outline: none!important;
-}
-* {
-  font-family: arial!important;
-  -webkit-tap-highlight-color: transparent;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
 }
 .ui-br-ext-extention {
   position: fixed;
