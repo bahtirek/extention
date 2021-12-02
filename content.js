@@ -13,6 +13,10 @@ window.bugReportextention = {
 chrome.runtime.onMessage.addListener(gotMessage);
 
 async function gotMessage(message, sender, sendResponse) {
+    /**
+     * message: inject - turns on the extension and displays the extension UI.
+     * Triggered on extention button click.
+     *  */ 
     if (message === 'inject') {
         let extention = document.getElementById('ui-br-ext-extention');
         
@@ -29,47 +33,30 @@ async function gotMessage(message, sender, sendResponse) {
             //if extension injected then check and toggle visibility
             toggleElement('ui-br-ext-extention');
         }
-    } 
-    //Cntr-Shift-S
-    if (message == "trigger_select") {
-        console.log('selected');
-        window.bugReportextention.dynamicDomFlow = true;
-        onSelect();
-        //hover select
     }
 
-    //Cntr-Shift-U
+    /**
+     * message: triger_select
+     * Key combo: Cntr-Shift-S
+     * Triggers the onSelect() function, which enables element hover and selection (red outline).
+     * Used for dynamic elements such as drop downs.
+     */
+    if (message == "trigger_select") {
+        window.bugReportextention.dynamicDomFlow = true;
+        const selectOperator = document.getElementById('ui-br-ext-select-button');
+        // Imitates the "select operator" click/selection via hot key combo.
+        activateOperator(selectOperator.id, selectOperator.classList);        
+    }
+
+    /**
+     * message: get_screenshot
+     * Key combo: Cntr-Shift-U
+     * Used to take screenshot of dynamic elements.
+     */
     if (message == "get_screenshot") {
-        console.log('screenshot');
         window.bugReportextention.screenshot = await getScreenshot ();
         // turn on report bug
     }
     
     return true;
 }
-
-
-/* const bodyChildren = document.querySelectorAll('body > *:not(#ui-br-ext-extention):not(script):not(noscript):not(style)');
-
-const preventClick = (event) => preventClickHandler(event);
-
-function addClickListener() {
-    bodyChildren.forEach(el => {
-        el.addEventListener('click', preventClick, {capture: true});
-    });
-}
-
-function removeClickListener() {
-    bodyChildren.forEach(el => {
-        el.removeEventListener('click', preventClick, {capture: true});
-    });
-}
-
-
-function preventClickHandler(event) {
-    event.preventDefault();
-    event.stopImmediatePropagation();
-    event.stopPropagation();
-    return false;
-} */
-

@@ -69,11 +69,13 @@ function resetAllOperators(){
  */
 function activateOperator(operatorId, operatorClassList){
 
+    // Previous active operator.
     const currentActiveOperator = document.getElementsByClassName('ui-br-ext-active')[0]
 
     /**
      * Resetting all operators before switching between operators.
      * The selected element should remain selected when the "Report bug" button is clicked.
+     * The selected element will be deselected (red outline will be removed).
      */
     if(currentActiveOperator?.id !== 'ui-br-ext-select-button'){
         resetAllOperators();

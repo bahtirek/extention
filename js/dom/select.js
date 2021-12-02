@@ -1,6 +1,6 @@
 function onSelect(){
     console.log('on select');
-    const noPointerEvent = 'body *{pointer-events: all!important; }';
+    const allPointerEvent = 'body *{pointer-events: all!important; }';
     const noHighlight = `*{
         -webkit-tap-highlight-color: transparent;
         -webkit-touch-callout: none;
@@ -22,11 +22,11 @@ function onSelect(){
 
     style.type = 'text/css';
     if (style.styleSheet){
-        style.styleSheet.cssText = noPointerEvent+noHighlight;
+        style.styleSheet.cssText = allPointerEvent+noHighlight;
     } else {
-        style.appendChild(document.createTextNode(noPointerEvent+noHighlight));
+        style.appendChild(document.createTextNode(allPointerEvent+noHighlight));
     }
-    addClickToBody(getMouseCoordinates);
+    addClickToHtml(getMouseCoordinates);
 }
 
 function onDeselect(){
@@ -38,9 +38,11 @@ function onDeselect(){
     // Remove outline from any previously selected elements.
     document.querySelectorAll('.ui-br-ext-outlined-element').forEach(element => {
         element.classList.remove('ui-br-ext-outlined-element');
+        element.style.cssText = window.bugReportextention.currentElementInlineStyle;
     });
 
     // Reset the global variable that holds the previously selected element properties.
+    // Used to calculte element's parent.
     if(ui_br_ext_previousElement){
         ui_br_ext_previousElement.element = null,
         ui_br_ext_previousElement.parentCount = 0
@@ -49,10 +51,9 @@ function onDeselect(){
     // Disabling the "Report Bug" button if select operator is turned off.
     displayReportBugButton(false);
 
-
 }
 
-function addClickToBody(eventFunction){
+function addClickToHtml(eventFunction){
 
     const html = document.getElementsByTagName('html')[0];
 
