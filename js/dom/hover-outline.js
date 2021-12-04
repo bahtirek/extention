@@ -15,7 +15,6 @@ function removeClickBlocker() {
 }
 
 function preventClickHandler(event) {
-    console.log(event);
     event.preventDefault();
     event.stopImmediatePropagation();
     event.stopPropagation();

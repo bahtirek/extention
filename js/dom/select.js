@@ -103,9 +103,6 @@ const ui_br_ext_parentLimit = 5;
 
 function findElementFromPoint(pageX, pageY){
 
-    // Temporarely removing 'pointer-evenet: none' style from head to find the element under pointer.
-    document.getElementById('ui-br-ext-extention-style')?.remove();
-
     let element = document.elementFromPoint(pageX, pageY);
 
     const retainSelectedElement = document.elementFromPoint(pageX, pageY);
@@ -167,16 +164,13 @@ function findElementFromPoint(pageX, pageY){
         && element?.closest('#ui-br-ext-extention') === null
         ){
             
-            // Enabling the 'pointer-evenet: none' after locating the element under the pointer.
-            onSelect();
             outlineSelectedElement(element);
             displayReportBugButton(true);
+            // Global variable that is used to store selected element's xpath.
+            window.ui_br_ext_selected_element_xpath = getElementXpath(element);
             window.bugReportextention.selectedElement = element;
             //Used to crop dynamic elements
             window.bugReportextention.selectedElementRect = element.getBoundingClientRect();
-    }else{
-      // Enabling the 'pointer-evenet: none' after locating the element under the pointer.
-      onSelect();          
     }
 
     if(ui_br_ext_previousElement.parentCount === ui_br_ext_parentLimit){
@@ -218,3 +212,41 @@ function displayReportBugButton(enable){
 }
 
 
+/**
+ * Gets the xpath of an outlined/selected element.
+ * @param {selected/outlined element} element 
+ * @returns xpath of outlined/selected element.
+ */
+function getElementXpath(elm){
+
+    let allNodes = document.getElementsByTagName('*'); 
+    let segs = []
+    for (; elm && elm.nodeType == 1; elm = elm.parentNode) 
+    { 
+        if (elm.hasAttribute('id')) { 
+
+            for (let i=0; i < allNodes.length; i++) { 
+                
+                    // Once next parent with ID is found, relative xpath is constructed based on that parent.
+                    if (allNodes[i].hasAttribute('id') && allNodes[i].id == elm.id){
+                        segs.unshift('//*[@id="' + elm.getAttribute('id') + '"]');
+                        return segs.join('/'); 
+                    }  
+                }; 
+             
+        } else { 
+            for (i = 1, sib = elm.previousSibling; sib; sib = sib.previousSibling) { 
+                if (sib.localName == elm.localName){
+                    i++;
+                }  
+            }; 
+                segs.unshift(elm.localName.toLowerCase() + '[' + i + ']'); 
+        }; 
+
+        if(elm.localName.toLowerCase() === 'html'){
+            break;
+        }
+    }; 
+
+    return segs.length ? '/' + segs.join('/') : null;    
+}
