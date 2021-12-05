@@ -166,8 +166,6 @@ function findElementFromPoint(pageX, pageY){
             
             outlineSelectedElement(element);
             displayReportBugButton(true);
-            // Global variable that is used to store selected element's xpath.
-            window.ui_br_ext_selected_element_xpath = getElementXpath(element);
             window.bugReportextention.selectedElement = element;
             //Used to crop dynamic elements
             window.bugReportextention.selectedElementRect = element.getBoundingClientRect();

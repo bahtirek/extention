@@ -4,7 +4,7 @@ function NewReport () {
     this.project = "";
     this.token = "";
     this.name = "";
-    this.xPath = [];
+    this.xPath = "";
     this.jira = "";
     this.saveJira = false;
     this.jiraLabel = "";
@@ -60,6 +60,7 @@ function collectData(){
     report.saveJira = document.getElementById('ui-br-ext-save-to-jira').checked;
     report.savePdf = document.getElementById('ui-br-ext-save-to-pdf').checked;
     report.saveScreenshot = document.getElementById('ui-br-ext-save-screenshot').checked;
+    report.xPath = getElementXpath(window.bugReportextention.selectedElement);
     return report;
 }
 
