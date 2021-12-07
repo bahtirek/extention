@@ -28,6 +28,7 @@ async function gotMessage(message, sender, sendResponse) {
                 setButtonListeners();
                 moveExtention();
                 resizeExtention();
+                settingOptions();
             });
         } else {
             //if extension injected then check and toggle visibility

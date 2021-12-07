@@ -31,6 +31,7 @@ body {
     background-color: #ffffff;
     z-index: 99999999;
     line-height: normal !important;
+    font-style: arial;
 
     &.ui-br-ext-moving {
         opacity: 0.8;
@@ -228,6 +229,8 @@ body {
                         box-sizing: border-box;
                         font-size: 14px!important;
                         color: #404040!important;
+                        font-style: arial;
+                        height: auto;
 
                         &:focus-visible {
                             outline: none;
@@ -307,6 +310,7 @@ body {
         .ui-br-ext-report-bug,
         .ui-br-ext-select,
         .ui-br-ext-comments,
+        .ui-br-ext-settings,
         .ui-br-ext-view-bug {
             flex-direction: column;
 
@@ -334,6 +338,31 @@ body {
                         padding: 2px 0 20px;
                         font-size: 15px;
                         color: #666666;
+                    }
+                }
+
+                .ui-br-ext-settings-container {
+                    .ui-br-ext-setting-title {
+                        border-top: 1px solid lightgrey;
+                        padding: 8px 5px;
+                        cursor: pointer;
+                        color: #555555;
+                        font-size: 16px;
+
+                        &:hover {
+                            background-color: #f7f7f7;
+                            font-weight: bold;
+                        }
+                    }
+
+                    &:first-child {
+                        .ui-br-ext-setting-title {
+                            border-top: none;
+                        }
+                    }
+                    .ui-br-ext-setting-body {
+                        display: none; 
+                        padding: 15px 0;
                     }
                 }
             }

@@ -19,6 +19,28 @@ let listeners = [
     },
 ];
 
+function settingOptions(){
+    const titles = document.getElementsByClassName('ui-br-ext-setting-title');
+    Array.from(titles).forEach(title => {
+        title.addEventListener('click', () => {
+            toggleSettings(title);
+        })
+    })
+};
+
+function toggleSettings(element) {
+
+    if(element.nextElementSibling.style.display == "block") {
+        element.nextElementSibling.style.display = "none";
+    } else {
+        const titles = document.getElementsByClassName('ui-br-ext-setting-title');
+        Array.from(titles).forEach(title => {
+            title.nextElementSibling.style.display = "none";
+        })
+        element.nextElementSibling.style.display = "block";
+    }
+    
+}
 
 //Called on select's change evenlistener
 // gets selected value, sets current project, changes innerhtml
