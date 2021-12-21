@@ -17,6 +17,12 @@ let listeners = [
         callback: chooseProject,
         parameter: '',
     },
+    {
+        id: 'ui-br-ext-save-regkey',
+        type: 'click',
+        callback: saveRegKey,
+        parameter: '',
+    },
 ];
 
 function settingOptions(){
@@ -156,6 +162,49 @@ function createSelectOptions(options, selectId, selected) {
 
     select.insertAdjacentHTML('beforeend', newOptions);
 }
+
+async function saveRegKey(){
+    const spinner = document.querySelectorAll('#ui-br-ext-save-regkey .ui-br-ext-spinner')[0];
+    console.log(spinner);
+    const regKeyInput = document.querySelectorAll('input[name="regKey"]')[0];
+    let regKey = regKeyInput.value;
+    if (regKey !== ''){ 
+        spinner.classList.add('ui-br-ext-spinner-on');
+        let account = await auth(regKey)
+            .catch(error => {
+                alert(error);
+                spinner.classList.remove('ui-br-ext-spinner-on');
+            });
+        if(account) {
+            storageSet('regKey', regKey)
+        }
+    } else {
+        alert("Enter registration key");
+        spinner.classList.remove('ui-br-ext-spinner-on');
+    }
+}
+
+const auth = (regKey) => {
+    return new Promise((resolve, reject) => {       
+        fetch(`https://extension-auth.evendor.app/api/get_config?RegistrationKey=${regKey}`)
+            .then(response => {
+                if (response.ok) {
+                    return response.json();
+                } else if (response.status === 401) {
+                    reject('Invalid registration key')
+                } else {
+                    reject('Sorry, something went wrong')
+                }
+            })
+            .then( data => {
+                resolve(data)
+            })
+            .catch(error => {
+                reject('Sorry, something went wrong');
+            })       
+    })
+}
+
 
 let projects = [
     {

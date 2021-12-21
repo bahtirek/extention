@@ -4,10 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/3rdparty/jquery.min.js"></script>
     <script src="content.js"></script>
     <script src="js/ui/mousedown.js"></script>
     <script src="js/ui/extention-move.js"></script>
     <script src="js/ui/extention-resize.js"></script>
+    <script src="js/ui/storage.js"></script>
     <script src="js/dom/select.js"></script>
     <script src="js/dom/hover-outline.js"></script>
     <script src="js/common/helper-utils.js"></script>
@@ -220,7 +222,7 @@
                 </div>
                 
             </div>
-            <div class="ui-br-ext-dropdown-item ui-br-ext-settings" id="ui-br-ext-settings">
+            <div class="ui-br-ext-dropdown-item ui-br-ext-settings ui-br-ext-active" id="ui-br-ext-settings">
                 <div class="ui-br-ext-drop-title">Settings</div>
                 <div class="ui-br-ext-drop-body">
                     <div class="ui-br-ext-settings-container">
@@ -258,7 +260,17 @@
                     </div>
                     <div class="ui-br-ext-settings-container">
                         <div class="ui-br-ext-setting-title">Account</div>
-                        <div class="ui-br-ext-setting-body"></div>
+                        <div class="ui-br-ext-setting-body" style="display: block;">
+                            <div class="ui-br-ext-form-container ui-br-ext-textarea">
+                                <label for="regKey">Registration Key</label>
+                                <input type="text" name="regKey" placeholder="sup_*****************"/>
+                                <span class="ui-br-ext-message"></span>
+                            </div>
+                            <button class="ui-br-ext-btn" id="ui-br-ext-save-regkey" data-listener="off">
+                                <span class="ui-br-ext-spinner"></span>
+                                <span >Save</span > 
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>

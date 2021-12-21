@@ -104,6 +104,14 @@ body.ui-br-ext-hide-hovered .ui-br-ext-hovered {
   padding: 2px;
   white-space: nowrap;
 }
+.ui-br-ext-extention .ui-br-ext-menu-container span:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
 .ui-br-ext-extention .ui-br-ext-dropdown {
   cursor: default;
 }
