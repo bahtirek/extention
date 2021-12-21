@@ -34,6 +34,7 @@ async function gotMessage(message, sender, sendResponse) {
             //if extension injected then check and toggle visibility
             toggleElement('ui-br-ext-extention');
         }
+        getRegKey();
     }
 
     /**
@@ -60,4 +61,15 @@ async function gotMessage(message, sender, sendResponse) {
     }
     
     return true;
+}
+
+async function getRegKey(){ 
+    const regKey = await storageGet('regKey');
+    if (regKey){ 
+        let account = await auth(regKey);
+        if (account) {
+            window.bugReportextention.account = account;
+            console.log(window.bugReportextention.account);
+        }
+    }
 }

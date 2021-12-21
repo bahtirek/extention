@@ -176,7 +176,8 @@ async function saveRegKey(){
                 spinner.classList.remove('ui-br-ext-spinner-on');
             });
         if(account) {
-            storageSet('regKey', regKey)
+            storageSet('regKey', regKey);
+            spinner.classList.remove('ui-br-ext-spinner-on');
         }
     } else {
         alert("Enter registration key");
