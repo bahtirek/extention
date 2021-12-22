@@ -135,6 +135,7 @@ body.ui-br-ext-hide-hovered .ui-br-ext-hovered {
 .ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-dropdown-item .ui-br-ext-btn-link {
   margin-bottom: 20px;
   text-align: right;
+  display: none;
 }
 .ui-br-ext-extention .ui-br-ext-dropdown .ui-br-ext-dropdown-item .ui-br-ext-btn-link span {
   font-size: 14px;

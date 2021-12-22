@@ -69,7 +69,16 @@ async function getRegKey(){
         let account = await auth(regKey);
         if (account) {
             window.bugReportextention.account = account;
-            console.log(window.bugReportextention.account);
+            if(regKey.slice(0,3) == "sup"){
+                const style= `
+                <style>
+                    .ui-br-ext-super {
+                        display: block!important;
+                    }
+                <style>`
+                document.head.insertAdjacentHTML('beforeend', style);
+                
+            }
         }
     }
 }
